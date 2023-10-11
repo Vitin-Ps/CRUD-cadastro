@@ -1,0 +1,10 @@
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\bin\Debug\ProjetoModel.dll
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\bin\Debug\ProjetoModel.pdb
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\bin\Debug\ProjetoModel.xml
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.Resources.resources
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.vbproj.GenerateResource.cache
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.vbproj.CoreCompileInputs.cache
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.dll
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.xml
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.pdb
+D:\Estudo\Github\CRUD-cadastro\Asp.NET\vendas_asp\ProjetoModel\obj\Debug\ProjetoModel.vbproj.AssemblyReference.cache

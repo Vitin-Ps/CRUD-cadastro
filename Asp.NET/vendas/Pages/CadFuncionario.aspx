@@ -2,8 +2,7 @@
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-<%--  --%>
+
     <div class="form">
         <table>
         <tr>
