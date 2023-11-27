@@ -1,0 +1,36 @@
+﻿<%@ Master Language="VB" CodeFile="pag_principal.master.vb" Inherits="pag_principal" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+        <style>
+            header {
+                background-color: aqua;
+            }
+            footer {
+                background-color: brown;
+                color: white;
+                font-weight: bold;
+            }
+        </style>
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+
+        <header>
+            <h1>Cadastro de Funcionários</h1>
+        </header>
+    <div>
+        <asp:ContentPlaceHolder id="ContentPlaceHolder1" runat="server">            
+        </asp:ContentPlaceHolder>
+    </div>
+    <footer>
+        <h2>Mailto Desenvolper</h2>
+    </footer>
+    </form>
+</body>
+</html>
