@@ -60,5 +60,5 @@ app.get('/limpar-tabela-vendas', (req, res) => {
     res.redirect('/cadastro-vendas');
 })
 
-app.listen(8080);
+app.listen(8081);
 
