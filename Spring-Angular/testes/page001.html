@@ -12,7 +12,7 @@
     <title>AchadinhosOnline</title>
 
     <style>
-      @font-face {        
+      @font-face {
         font-family: "Roboto";
         src: local("Roboto"),
           url("fontes/roboto/Roboto-Regular.ttf") format("truetype");
@@ -59,7 +59,6 @@
         display: none;
         position: absolute;
         background-color: #9470fe89;
-        border-radius: 5px;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.034);
         font-size: 1em;
         color: white;
@@ -201,6 +200,60 @@
         color: #6700ac;
       }
 
+      .opcoes-container {
+        width: 80%;
+        margin: 2em auto;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+
+      .card-opcao {
+        background-color: #FFF;
+        width: 160px;
+        margin: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.060);
+        padding: 2em .5em;
+      }
+
+      .card-opcao i {
+        color: #6700ac;
+        font-size: 3.5em;
+        margin-bottom: .3em;
+      }
+
+      .card-opcao h2 {
+        font-size: 1.3em;
+        font-weight: 600;
+        margin-bottom: .3em;
+      }
+
+      .card-opcao p {
+        font-size: .9em;
+        margin-bottom: .8em;
+      }
+
+      .card-opcao button {
+        background-color: #6700ac;
+        color: #fff;
+        font-weight: bold;
+        border-radius: 5px;
+        border: 1px solid transparent;
+        padding: .5em 2.5em;     
+        transition: .2s;   
+      }
+
+      .card-opcao button:hover {
+        background-color: #fff;
+        color: #6700ac;
+        border-color: #6700ac;
+      }
+
       footer {
         background-color: #333; /* Cor de fundo do rodapé */
         color: #fff; /* Cor do texto no rodapé */
@@ -234,6 +287,26 @@
           <h2>Saiba Mais Sobre <span>Achadinhos</span>Online</h2>
         </div>
         <a href=""><button class="btn-sobre">Saiba Mais</button></a>
+      </div>
+      <div class="opcoes-container">
+        <div class="card-opcao">
+          <i class="fas fa-user-tie"></i>
+          <h2>Funcionários</h2>
+          <p>cadastrar novos Funcionários.</p>
+          <a href=""><button>Mais</button></a>
+        </div>
+        <div class="card-opcao">
+          <i class="fas fa-user-tie"></i>
+          <h2>Funcionários</h2>
+          <p>cadastrar novos Funcionários.</p>
+          <a href=""><button>Mais</button></a>
+        </div>
+        <div class="card-opcao">
+          <i class="fas fa-user-tie"></i>
+          <h2>Funcionários</h2>
+          <p>cadastrar novos Funcionários.</p>
+          <a href=""><button>Mais</button></a>
+        </div>
       </div>
     </div>
     <footer>
