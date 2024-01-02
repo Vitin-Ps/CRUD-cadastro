@@ -23,7 +23,7 @@ app.set('view engine', 'handlebars'); // meio que sincronisa o express para que 
 app.set('views', './views'); // ativa o handlebars para buscar na pasta /views os arquivos que vão ser usados como html
 
 const Vendas = require('./models/vendas');
-//Vendas.criarVendas(); //usado para criar a tabela(use somente na primeira aplicação)
+// Vendas.criarVendas(); //usado para criar a tabela(use somente na primeira aplicação)
 
 //rotas
 app.get('/cadastro-vendas', async (req, res) => { // aqui abre uma rota no express que cria uma aba no url 
