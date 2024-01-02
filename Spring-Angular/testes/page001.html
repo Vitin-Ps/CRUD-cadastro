@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+
+    <title>AchadinhosOnline</title>
+
+    <style>
+      * {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: #fdfdfd;
+        color: #333;
+      }
+
+      header {
+        position: relative;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-between;
+        align-items: center;
+        z-index: 0;
+      }
+
+      header > a {
+        padding: 2em;
+        text-align: center;
+        font-size: 0.5em;
+        text-decoration: none;
+        color: #00c742;
+      }
+
+      header a img {
+        width: 100px;
+      }
+
+      /* menu */
+      .menu {
+        text-align: right;
+        padding: 0.5em;
+      }
+
+      .sub-menu {
+        display: none;
+        position: absolute;
+        background-color: #b097fc1f;
+        border-radius: 5px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.034);
+        font-size: 1em;
+        color: white;
+        font-weight: bold;
+        padding: 0.9em;
+        z-index: 1;
+        right: 10px;
+      }
+
+      .sub-menu li {
+        list-style: none;
+        margin-bottom: 1em;
+      }
+
+      .sub-menu li a {
+        text-decoration: none;
+        color: #6700ac;
+        border-radius: 5px;
+        padding: 0.3em;
+        transition: 0.3s;
+      }
+      .sub-menu li a:hover {
+        background-color: #8056ff;
+        color: #fff;
+      }
+
+      .menu:hover .sub-menu {
+        display: block;
+      }
+
+      .fa-bars {
+        color: #00a637;
+        font-size: 2em;
+        padding: 0.5em 1em;
+      }
+
+      div.main {
+        min-height: 70vh;
+      }
+
+      .sobre-container {
+        width: 100%;
+        height: 450px;
+        display: flex;
+      }
+
+      .cn-laranja {
+        width: 50%;
+        background-color: #8056ff;
+        padding: 10px;
+      }
+
+      .img-sobre {
+        position: absolute;
+        width: 400px;
+        height: 270px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.14);
+        border-radius: 5px;
+        left: 50%;
+        transform: translateX(-50%);
+        top: 300px;
+        z-index: 2;
+      }
+
+      .cn-dark {
+        background-color: #333;
+        width: 350px;
+        height: 300px;
+        box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.14);
+        position: absolute;
+        left: 50%;
+        transform: translateX(-35%);
+        top: 200px;
+        z-index: 1;
+      }
+
+      .area01 {
+        height: 250px;
+        margin-top: 100px;
+      }
+      .area02 {
+        height: 180px;
+        margin-top: 200px;
+      }
+
+      footer {
+        background-color: #333; /* Cor de fundo do rodapé */
+        color: #fff; /* Cor do texto no rodapé */
+        padding: 20px;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="#">
+        <img src="imgs/logo.png" alt="" />
+        <h1>Achadinhos</h1>
+      </a>
+      <nav>
+        <ul class="menu">
+          <i class="fas fa-bars"></i>
+          <ul class="sub-menu">
+            <li><a href="#">Cadastro de Funcionários</a></li>
+            <li><a href="#">Cadastro de Produto</a></li>
+          </ul>
+        </ul>
+      </nav>
+    </header>
+    <div class="main">
+      <div class="sobre-container">
+        <div class="cn-laranja area01"></div>
+        <div class="cn-laranja area02"></div>
+        <img src="imgs/img001.jpg" alt="img01" class="img-sobre" />
+        <div class="cn-dark">
+          <div>conteudo</div>
+        </div>
+      </div>
+    </div>
+    <footer>
+      <p>&copy; 2024 AchadinhosOnline. Todos os direitos reservados.</p>
+    </footer>
+  </body>
+</html>
