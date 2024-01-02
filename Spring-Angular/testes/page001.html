@@ -12,8 +12,14 @@
     <title>AchadinhosOnline</title>
 
     <style>
+      @font-face {        
+        font-family: "Roboto";
+        src: local("Roboto"),
+          url("fontes/roboto/Roboto-Regular.ttf") format("truetype");
+      }
+
       * {
-        font-family: "Arial", sans-serif;
+        font-family: "Roboto", sans-serif;
         margin: 0;
         padding: 0;
       }
@@ -28,7 +34,7 @@
         flex-wrap: wrap;
         justify-content: space-between;
         align-items: center;
-        z-index: 0;
+        z-index: 9;
       }
 
       header > a {
@@ -52,14 +58,14 @@
       .sub-menu {
         display: none;
         position: absolute;
-        background-color: #b097fc1f;
+        background-color: #9470fe89;
         border-radius: 5px;
         box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.034);
         font-size: 1em;
         color: white;
         font-weight: bold;
         padding: 0.9em;
-        z-index: 1;
+        z-index: 2;
         right: 10px;
       }
 
@@ -98,6 +104,7 @@
         width: 100%;
         height: 450px;
         display: flex;
+        z-index: 1;
       }
 
       .cn-laranja {
@@ -152,6 +159,19 @@
         z-index: 1;
       }
 
+      .cn-dark h2 {
+        color: #fff;
+        margin: 1em;
+        font-size: 1.8em;
+        line-height: 45px;
+        font-weight: 200;
+      }
+
+      .cn-dark h2 span {
+        color: #9d1cf3;
+        font-weight: bold;
+      }
+
       .area01 {
         height: 250px;
         margin-top: 100px;
@@ -159,6 +179,26 @@
       .area02 {
         height: 180px;
         margin-top: 200px;
+      }
+
+      .btn-sobre {
+        background-color: #6700ac;
+        color: #fff;
+        padding: 1em 1.5em;
+        border-radius: 5px;
+        border: none;
+        font-weight: bold;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-90%);
+        top: 280px;
+        transition: 0.2s;
+        z-index: 3;
+      }
+
+      .btn-sobre:hover {
+        background-color: #fff;
+        color: #6700ac;
       }
 
       footer {
@@ -191,8 +231,9 @@
         <div class="cn-laranja area02"></div>
         <img src="imgs/img001.jpg" alt="img01" class="img-sobre" />
         <div class="cn-dark">
-          <div>conteudo</div>
+          <h2>Saiba Mais Sobre <span>Achadinhos</span>Online</h2>
         </div>
+        <a href=""><button class="btn-sobre">Saiba Mais</button></a>
       </div>
     </div>
     <footer>
