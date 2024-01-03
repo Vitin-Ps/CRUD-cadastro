@@ -1,6 +1,5 @@
 package com.example.crudjava.controller;
 
-import com.example.crudjava.domain.funcionario.*;
 import com.example.crudjava.domain.produto.*;
 import com.example.crudjava.repository.ProdutoRepository;
 import jakarta.transaction.Transactional;
@@ -15,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/produtos")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ProdutoController {
     @Autowired
     private ProdutoRepository repository;

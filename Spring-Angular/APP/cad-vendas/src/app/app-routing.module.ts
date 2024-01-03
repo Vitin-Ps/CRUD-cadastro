@@ -5,6 +5,7 @@ import { CadFuncionarioComponent } from './components/pages/cad-funcionario/cad-
 import { CadProdutoComponent } from './components/pages/cad-produto/cad-produto.component';
 import { CadVendaComponent } from './components/pages/cad-venda/cad-venda.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
+import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
 
 
 const routes: Routes = [
@@ -14,6 +15,7 @@ const routes: Routes = [
   {path:"produtos", component:CadProdutoComponent},
   {path:"vendas", component:CadVendaComponent},
   {path:"sobre", component:SobreComponent},
+  {path:"carrinho-produtos", component:CarrinhoProdutoComponent},
 
 ];
 

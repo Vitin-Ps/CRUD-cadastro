@@ -1,5 +1,5 @@
 import { Component, EventEmitter, Input, Output } from '@angular/core';
-import { Funcionario } from '../../interfaces/Funcionario';
+import { Funcionario } from '../../../interfaces/Funcionario';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
 @Component({

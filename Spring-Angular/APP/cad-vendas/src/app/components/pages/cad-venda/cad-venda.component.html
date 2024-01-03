@@ -1,1 +1,26 @@
-<p>cad-venda works!</p>
+<div class="container-com-fundo">
+  <div class="cn-decoration area01"></div>
+  <div class="cn-decoration area02"></div>
+  <div class="cn-dark">
+    <form>
+      <div class="form-group">
+        <label for="funcionarios">Funcionários: </label>
+        <select name="" id="">
+          <option value="" selected disabled>Selecione</option>
+          <option
+            *ngFor="let funcionario of funcionarios"
+            value="{{ funcionario.id }}"
+          >
+            {{ funcionario.nome }}
+          </option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="valor">Valor: </label>
+        <input type="text" value="{{ valorTeste }}" readonly />
+        <a routerLink="/carrinho-produtos"><button class="btn-padrao">Adicionar Produtos</button></a>
+      </div>
+      <input type="submit" value="Registrar">
+    </form>
+  </div>
+</div>

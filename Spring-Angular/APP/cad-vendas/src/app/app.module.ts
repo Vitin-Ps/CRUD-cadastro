@@ -15,8 +15,10 @@ import { CadProdutoComponent } from './components/pages/cad-produto/cad-produto.
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { FormularioDinamicoFilhoComponent } from './components/testes/formulario-dinamico-filho/formulario-dinamico-filho.component';
 import { FormularioDinamicoPaiComponent } from './components/testes/formulario-dinamico-pai/formulario-dinamico-pai.component';
-import { FormFuncComponent } from './components/form-func/form-func.component';
+import { FormFuncComponent } from './components/forms/form-func/form-func.component';
 import { MensagensComponent } from './components/mensagens/mensagens.component';
+import { FormProdutoComponent } from './components/forms/form-produto/form-produto.component';
+import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { MensagensComponent } from './components/mensagens/mensagens.component';
     FormularioDinamicoFilhoComponent,
     FormularioDinamicoPaiComponent,
     FormFuncComponent,
-    MensagensComponent
+    MensagensComponent,
+    FormProdutoComponent,
+    CarrinhoProdutoComponent
   ],
   imports: [
     BrowserModule,

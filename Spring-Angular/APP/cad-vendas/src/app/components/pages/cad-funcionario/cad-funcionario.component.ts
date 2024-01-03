@@ -22,7 +22,7 @@ export class CadFuncionarioComponent {
     this.funcService.registraFuncionario(funcionario).subscribe(
       (response) => {
         console.log('Resposta do servidor:', response);
-        this.mensagemService.add("Funcionário adicionado com Sucesso!");
+        this.mensagemService.add(`Funcionário ${funcionario.nome} cadastrado com Sucesso!`);
         this.router.navigate(['/']);
       },
       (error) => {

@@ -18,7 +18,7 @@
   /*FORM*/
 
 form {
-  width: 450px;
+  max-width: 450px;
   margin: 2em auto;
 }
 
@@ -35,10 +35,15 @@ form {
 }
 
 .form-group input,
-.form-group textarea {
+.form-group textarea,
+.form-group select {
   padding: .6em;
   color: #777;
   font-size: 0.8em;
+}
+
+.form-group select option {
+  font-size: 1.2em;
 }
 
 input[type="submit"] {
@@ -62,6 +67,26 @@ input[type="submit"]:hover {
   border-left: 3px solid #dc3545;
   padding-left: .2em;
 }
+
+/* butoes */
+
+.btn-padrao {
+  background-color: #6700ac;
+  color: #fff;
+  padding: 0.5em 1em;
+  margin: 1em 0;
+  font-weight: bold;
+  border-radius: 5px;
+  border: 1px solid transparent;
+  transition: 0.2s;
+}
+
+.btn-padrao:hover {
+  background-color: #fff;
+  color: #6700ac;
+  border-color: #6700ac;
+}
+
 
 /* modelo Container com fundo */
 .container-com-fundo {
@@ -122,7 +147,7 @@ input[type="submit"]:hover {
 
 @media (max-width: 900px) {
   .container-com-fundo .cn-dark {
-    max-width: 500px;
+    max-width: 510px;
     height: 80%;
     transform: translateX(-50%);
   }
@@ -143,7 +168,7 @@ input[type="submit"]:hover {
 
 @media (max-width: 550px) {
   .container-com-fundo .cn-dark {
-    max-width: 450px;
+    max-width: 400px;
     height: 70%;
     transform: translateX(-50%);
   }
