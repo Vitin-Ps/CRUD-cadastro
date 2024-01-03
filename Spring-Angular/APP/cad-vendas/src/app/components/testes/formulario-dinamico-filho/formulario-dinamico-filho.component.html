@@ -1,0 +1,11 @@
+<form [formGroup]="formDinamico">
+  <div *ngFor="let campo of formularioData">
+    <label>{{ campo.label }}</label>
+    <input
+      type="{{ campo.tipo }}"
+      placeholder="{{ campo.placeholder }}"
+      formControlName="{{ campo.label }}"
+    />
+  </div>
+  <button>{{ btnEnviar }}</button>
+</form>

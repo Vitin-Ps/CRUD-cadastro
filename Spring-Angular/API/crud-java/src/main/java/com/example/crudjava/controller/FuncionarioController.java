@@ -14,6 +14,7 @@ import org.springframework.web.util.UriComponentsBuilder;
 
 @RestController
 @RequestMapping("/funcionarios")
+@CrossOrigin(origins = "http://localhost:4200")
 public class FuncionarioController {
     @Autowired
     private FuncionarioRepository repository;

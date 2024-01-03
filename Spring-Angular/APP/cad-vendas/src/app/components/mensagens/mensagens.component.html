@@ -1,0 +1,6 @@
+<div class="message" *ngIf="mensagensService.mensagem">
+  <p>{{ mensagensService.mensagem }}</p>
+  <button class="clear" (click)="mensagensService.clear()">
+    <fa-icon [icon]="faTimes"></fa-icon>
+  </button>
+</div>
