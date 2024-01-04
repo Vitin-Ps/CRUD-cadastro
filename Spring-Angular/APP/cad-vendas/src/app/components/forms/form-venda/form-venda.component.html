@@ -45,8 +45,8 @@
       >
         <p *ngIf="valor.errors?.['required']">Nenhum produto selecionado!</p>
       </div>
-      <ng-container >
-        <!-- *ngIf="funcionarioSelecionado != null" -->
+      <ng-container *ngIf="funcionarioSelecionado != null">
+        
         <div class="btn-container">
             <button class="btn-padrao btn-invertido" (click)="limparCarrinho()">Limpar Carrinho</button>
             <a [routerLink]="['/carrinho-produtos', funcionarioSelecionado]"
