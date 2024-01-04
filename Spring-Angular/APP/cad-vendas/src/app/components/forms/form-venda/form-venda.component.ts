@@ -113,7 +113,8 @@ export class FormVendaComponent {
     this.listarItemsCarrinho(this.funcionarioSelecionado);
   }
 
-  limparCarrinho(): void {
+  limparCarrinho(e: Event): void {
+    e.preventDefault();
     if(this.valorVenda == "") {
       this.mensagemService.add("Carrinho já está vazio!");
       return;

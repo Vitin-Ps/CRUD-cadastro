@@ -48,7 +48,7 @@
       <ng-container *ngIf="funcionarioSelecionado != null">
         
         <div class="btn-container">
-            <button class="btn-padrao btn-invertido" (click)="limparCarrinho()">Limpar Carrinho</button>
+            <button class="btn-padrao btn-invertido" (click)="limparCarrinho($event)">Limpar Carrinho</button>
             <a [routerLink]="['/carrinho-produtos', funcionarioSelecionado]"
               ><button class="btn-padrao">Editar Carrinho</button></a
             >

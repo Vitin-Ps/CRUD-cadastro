@@ -102,6 +102,30 @@ input[type="submit"]:hover {
   border-color: transparent;
 }
 
+/* barra de rolagem */
+.scroll-bar {
+  overflow: scroll;
+  overflow-x: hidden;
+}
+
+
+.scroll-bar::-webkit-scrollbar {
+    width: 15px; /* Largura da barra de rolagem */
+}
+
+.scroll-bar::-webkit-scrollbar-track {
+    background-color: none; /* Cor do fundo da barra de rolagem */
+}
+
+.scroll-bar::-webkit-scrollbar-thumb {
+    background-color: #8036b2a1; /* Cor do botão de rolagem */
+    border-radius: 3px; /* Borda arredondada do botão de rolagem */
+}
+
+.scroll-bar::-webkit-scrollbar-thumb:hover {
+    background-color: #6700acbb; /* Cor do botão de rolagem ao passar o mouse */
+}
+
 
 /* modelo Container com fundo */
 .container-com-fundo {
