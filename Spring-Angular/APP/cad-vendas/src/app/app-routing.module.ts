@@ -6,6 +6,7 @@ import { CadProdutoComponent } from './components/pages/cad-produto/cad-produto.
 import { CadVendaComponent } from './components/pages/cad-venda/cad-venda.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
+import { HomeAdminComponent } from './components/pages/home-admin/home-admin.component';
 
 
 const routes: Routes = [
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path:"vendas/:id", component:CadVendaComponent},
   {path:"sobre", component:SobreComponent},
   {path:"carrinho-produtos/:id", component:CarrinhoProdutoComponent},
+  {path:"home/area-admnistrativa", component:HomeAdminComponent}
 
 ];
 

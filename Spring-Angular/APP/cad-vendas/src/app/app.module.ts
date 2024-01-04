@@ -20,6 +20,7 @@ import { MensagensComponent } from './components/mensagens/mensagens.component';
 import { FormProdutoComponent } from './components/forms/form-produto/form-produto.component';
 import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
 import { FormVendaComponent } from './components/forms/form-venda/form-venda.component';
+import { HomeAdminComponent } from './components/pages/home-admin/home-admin.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,8 @@ import { FormVendaComponent } from './components/forms/form-venda/form-venda.com
     MensagensComponent,
     FormProdutoComponent,
     CarrinhoProdutoComponent,
-    FormVendaComponent
+    FormVendaComponent,
+    HomeAdminComponent
   ],
   imports: [
     BrowserModule,
