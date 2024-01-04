@@ -1,11 +1,10 @@
-import { Component } from '@angular/core';
+import { ChangeDetectorRef, Component } from '@angular/core';
 import { Produto } from '../../../interfaces/Produto';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ProdutoService } from '../../../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { CarrinhoService } from '../../../services/carrinho.service';
 import { MensagensService } from '../../../services/mensagens.service';
-import { FuncionarioService } from '../../../services/funcionario.service';
 import { CarrinhoEnvio } from '../../../interfaces/CarrinhoAdd';
 
 @Component({
@@ -27,7 +26,7 @@ export class CarrinhoProdutoComponent {
     private route: ActivatedRoute,
     private carrinhoService: CarrinhoService,
     private mensagemService: MensagensService,
-    private router: Router
+    private router: Router,
   ) {}
 
   ngOnInit(): void {
@@ -46,6 +45,10 @@ export class CarrinhoProdutoComponent {
     this.produtos = this.allProdutos.filter((produto) => {
       return produto.nome.toLowerCase().includes(value);
     });
+  }
+
+  marcarCheckbox(produto: Produto) {
+    produto.selecionado = !produto.selecionado;
   }
 
   onSubmit(): void {

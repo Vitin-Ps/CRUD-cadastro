@@ -60,6 +60,13 @@ form {
   margin: 0;
 }
 
+.card-produto input[type="checkbox"] {
+    width: 17px; 
+    height: 17px;
+}
+
+/* ------------------------------------------------------------ */
+
 .container-com-fundo {
   height: 800px;
   padding-bottom: 20%;
