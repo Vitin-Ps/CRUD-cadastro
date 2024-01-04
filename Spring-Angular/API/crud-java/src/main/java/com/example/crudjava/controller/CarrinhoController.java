@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/carrinho")
-@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = {"http://localhost:4200", "http://192.168.100.46:4200"})
 public class CarrinhoController {
     @Autowired
     private CarrinhoService service;
