@@ -1,5 +1,5 @@
 export interface VendaDTO  {
     id?: number,
-    funcionarioId: number,
+    idFuncionario: number,
     valor: number
 }

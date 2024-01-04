@@ -53,8 +53,8 @@ export class FormVendaComponent {
     this.listarItemsCarrinho(id);
   }
 
-  get funcionarioId() {
-    return this.vendasForm.get('funcionarioId')!;
+  get idFuncionario() {
+    return this.vendasForm.get('idFuncionario')!;
   }
   get valor() {
     return this.vendasForm.get('valor')!;
@@ -96,7 +96,7 @@ export class FormVendaComponent {
     //validando formulario
     this.vendasForm = new FormGroup({
       id: new FormControl(''),
-      funcionarioId: new FormControl(
+      idFuncionario: new FormControl(
         this.funcionario != null ? this.funcionario.id : '',
         [Validators.required]
       ),

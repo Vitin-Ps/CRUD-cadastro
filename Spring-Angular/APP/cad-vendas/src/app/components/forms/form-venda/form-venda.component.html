@@ -4,7 +4,7 @@
       <label for="funcionario">Funcionário: </label>
       <ng-container *ngIf="funcionario == undefined; else comId">
         <select
-          formControlName="funcionarioId"
+          formControlName="idFuncionario"
           (change)="selecionarFuncionario($event)"
           required
         >
@@ -19,13 +19,13 @@
       </ng-container>
       <ng-template #comId>
         <input type="text" value="{{ funcionario?.nome }}" readonly />
-        <input type="hidden" formControlName="funcionarioId" readonly />
+        <input type="hidden" formControlName="idFuncionario" readonly />
       </ng-template>
       <div
-        *ngIf="funcionarioId.invalid && formDir.submitted"
+        *ngIf="idFuncionario.invalid && formDir.submitted"
         class="validation-error"
       >
-        <p *ngIf="funcionarioId.errors?.['required']">
+        <p *ngIf="idFuncionario.errors?.['required']">
           Escolha um funcionário!
         </p>
       </div>
