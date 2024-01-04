@@ -6,6 +6,7 @@ import { Funcionario } from '../../../interfaces/Funcionario';
 import { ActivatedRoute } from '@angular/router';
 import { CarrinhoService } from '../../../services/carrinho.service';
 import { Carrinho } from '../../../interfaces/Carrinho';
+import { MensagensService } from '../../../services/mensagens.service';
 
 @Component({
   selector: 'app-form-venda',
@@ -15,7 +16,7 @@ import { Carrinho } from '../../../interfaces/Carrinho';
 export class FormVendaComponent {
   @Output() onSubmit = new EventEmitter<VendaDTO>();
   @Input() btnText!: string;
-  valorVenda: string = "";
+  valorVenda: string = '';
   vendasForm!: FormGroup;
   funcionarioSelecionado: number | null = null;
   funcionarios: Funcionario[] = [];
@@ -25,7 +26,8 @@ export class FormVendaComponent {
   constructor(
     private funcService: FuncionarioService,
     private carrinhoService: CarrinhoService,
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private mensagemService: MensagensService
   ) {}
 
   ngOnInit(): void {
@@ -45,10 +47,10 @@ export class FormVendaComponent {
       this.funcionarioSelecionado = Number(this.funcionario.id);
       //obs: não colocar pesquisas do banco dentro de ifs porque o js é sincrono
     }
-    //buscando itens do carrinho baseado no id do funcionario
-    this.listarItemsCarrinho(id);
     // validando formulario
     this.validaForm();
+    //buscando itens do carrinho baseado no id do funcionario
+    this.listarItemsCarrinho(id);
   }
 
   get funcionarioId() {
@@ -71,32 +73,34 @@ export class FormVendaComponent {
         const data = item.content;
         this.itemsCarrinho = data;
         const length = this.itemsCarrinho.length;
-        this.valorVenda = ""
+        this.valorVenda = '';
 
         if (this.itemsCarrinho != undefined) {
-          let valor = 0;
-          this.itemsCarrinho.forEach((item) => {
-            return (valor += item.produto.valor);
-          });
-          this.valorVenda = String(valor);
-          if (length <= 0) {
-            this.valorVenda = "";
+          if (length != 0) {
+            let valor = 0;
+            this.itemsCarrinho.forEach((item) => {
+              return (valor += item.produto.valor);
+            });
+            this.valorVenda = String(valor);
+            this.valor.setValue(this.valorVenda);
+          } else {
+            this.valorVenda = '';
           }
         } else {
-          this.valorVenda = "";
+          this.valorVenda = '';
         }
       });
   }
 
   validaForm(): void {
-     //validando formulario
-     this.vendasForm = new FormGroup({
+    //validando formulario
+    this.vendasForm = new FormGroup({
       id: new FormControl(''),
       funcionarioId: new FormControl(
         this.funcionario != null ? this.funcionario.id : '',
         [Validators.required]
       ),
-      valor: new FormControl(this.valorVenda != "" ? this.valorVenda : '', [
+      valor: new FormControl(this.valorVenda != '' ? this.valorVenda : '', [
         Validators.required,
       ]),
     });
@@ -107,5 +111,19 @@ export class FormVendaComponent {
     const value = target.value;
     this.funcionarioSelecionado = Number(value);
     this.listarItemsCarrinho(this.funcionarioSelecionado);
+  }
+
+  limparCarrinho(): void {
+    if(this.valorVenda == "") {
+      this.mensagemService.add("Carrinho já está vazio!");
+      return;
+    }
+    if (this.funcionarioSelecionado != null) {
+      this.carrinhoService
+        .limparCarrinho(this.funcionarioSelecionado)
+        .subscribe(() => {
+          window.location.reload()
+        });
+    }
   }
 }

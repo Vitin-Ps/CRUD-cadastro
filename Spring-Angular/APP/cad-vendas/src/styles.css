@@ -74,10 +74,11 @@ input[type="submit"]:hover {
   background-color: #6700ac;
   color: #fff;
   padding: 0.5em 1em;
-  margin: 1em 0;
+  margin: 1em;
   font-weight: bold;
   border-radius: 5px;
   border: 1px solid transparent;
+  cursor: pointer;
   transition: 0.2s;
 }
 
@@ -85,6 +86,20 @@ input[type="submit"]:hover {
   background-color: #fff;
   color: #6700ac;
   border-color: #6700ac;
+  margin: 0.8em;
+  padding: .7em 1.2em;
+}
+
+.btn-invertido {
+  background-color: #FFF;
+  color: #6700ac;
+  border: 1px solid #6700ac;
+}
+
+.btn-invertido:hover {
+  background-color: #6700ac;
+  color: #FFF;
+  border-color: transparent;
 }
 
 

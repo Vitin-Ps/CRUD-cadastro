@@ -24,4 +24,9 @@ export class CarrinhoService {
     console.log(`${this.apiUrl}/${idFuncionario}`)
     return this.http.get<Response<Carrinho[]>>(`${this.apiUrl}/${idFuncionario}`);
   }
+
+  limparCarrinho(id: number) {
+    const url = `${this.apiUrl}/${id}`
+    return this.http.delete(url);
+  }
 }
