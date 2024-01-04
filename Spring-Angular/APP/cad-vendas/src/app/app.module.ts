@@ -19,6 +19,8 @@ import { FormFuncComponent } from './components/forms/form-func/form-func.compon
 import { MensagensComponent } from './components/mensagens/mensagens.component';
 import { FormProdutoComponent } from './components/forms/form-produto/form-produto.component';
 import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
+import { FormVendasComponent } from './components/forms/form-vendas/form-vendas.component';
+import { FormVendaComponent } from './components/forms/form-venda/form-venda.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,9 @@ import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/ca
     FormFuncComponent,
     MensagensComponent,
     FormProdutoComponent,
-    CarrinhoProdutoComponent
+    CarrinhoProdutoComponent,
+    FormVendasComponent,
+    FormVendaComponent
   ],
   imports: [
     BrowserModule,

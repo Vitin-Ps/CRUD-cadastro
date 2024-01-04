@@ -14,8 +14,9 @@ const routes: Routes = [
   {path:"funcionarios", component:CadFuncionarioComponent},
   {path:"produtos", component:CadProdutoComponent},
   {path:"vendas", component:CadVendaComponent},
+  {path:"vendas/:id", component:CadVendaComponent},
   {path:"sobre", component:SobreComponent},
-  {path:"carrinho-produtos", component:CarrinhoProdutoComponent},
+  {path:"carrinho-produtos/:id", component:CarrinhoProdutoComponent},
 
 ];
 

@@ -36,4 +36,10 @@ export class FuncionarioService {
   listarFuncionariosAll(): Observable<Response<Funcionario[]>> {
     return this.http.get<Response<Funcionario[]>>(this.apiUrl);
   }
+
+  listarFuncionarioPorId(id: number): Observable<Funcionario> {
+    const url = `${this.apiUrl}/${id}`
+    return this.http.get<Funcionario>(url);
+
+  }
 }

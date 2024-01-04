@@ -12,7 +12,6 @@
         />
       </form>
     </div>
-    <form [formGroup]="somaProdForm" #formDir="ngForm">
       <div class="produtos-container">
         <div class="card-produto" *ngFor="let produto of produtos">
           <img src="../../../../assets/imagens/img002.jpg" alt="imagem teste" />
@@ -20,9 +19,9 @@
             <h2>{{ produto.nome }}</h2>
             <p><span>Valor: </span> {{ produto.valor }}</p>
           </aside>
-          <input type="checkbox" value="{{ produto.valor }}" />
+          <input type="checkbox" (change)="produto.selecionado = true"/>
         </div>
       </div>
-    </form>
+      <input type="submit" value="Finalizar" (click)="onSubmit()"/>
   </div>
 </div>
