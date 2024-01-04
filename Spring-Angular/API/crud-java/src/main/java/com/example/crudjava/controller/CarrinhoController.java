@@ -36,6 +36,13 @@ public class CarrinhoController {
         return ResponseEntity.ok(dto);
     }
 
+    @DeleteMapping("/{id}")
+    @Transactional
+    public ResponseEntity limparCarrinho(@PathVariable Long id) {
+        service.limparCarrinho(id);
+        return ResponseEntity.noContent().build();
+    }
+
     @PostMapping("/remover")
     @Transactional
     public ResponseEntity removerItem(@RequestBody @Valid List<DadosCarrinho> dadosList) {

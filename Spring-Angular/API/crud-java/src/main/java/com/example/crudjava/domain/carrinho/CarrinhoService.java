@@ -40,6 +40,10 @@ public class CarrinhoService {
         }
     }
 
+    public void limparCarrinho(Long funcionarioId) {
+        carrinhoRepository.deleteAllByFuncionarioId(funcionarioId);
+    }
+
     public Page<DadosListagemCarrinho> listarCarrinho(Long id, Pageable pageable) {
         return carrinhoRepository.findAllByFuncionarioId(id, pageable);
     }

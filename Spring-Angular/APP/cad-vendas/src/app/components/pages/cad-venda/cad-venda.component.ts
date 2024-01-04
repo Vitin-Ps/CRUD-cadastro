@@ -1,13 +1,5 @@
 import { Component } from '@angular/core';
-import { FuncionarioService } from '../../../services/funcionario.service';
-import { Funcionario } from '../../../interfaces/Funcionario';
-import { ActivatedRoute, Router } from '@angular/router';
-import { CarrinhoService } from '../../../services/carrinho.service';
-import { Carrinho } from '../../../interfaces/Carrinho';
-import { FormControl, FormGroup, Validators } from '@angular/forms';
-import { VendaService } from '../../../services/venda.service';
 import { VendaDTO } from '../../../interfaces/VendaDTO';
-import { MensagensService } from '../../../services/mensagens.service';
 
 @Component({
   selector: 'app-cad-venda',
@@ -19,6 +11,7 @@ export class CadVendaComponent {
 
   registrarVenda(venda : VendaDTO) {
     
+    console.log("chegou aqui")
       console.log(venda)
     //   // this.vendaService.registrarVenda(venda).subscribe(
     //   //   (response) => {

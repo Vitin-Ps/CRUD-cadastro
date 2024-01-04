@@ -52,19 +52,22 @@ export class CarrinhoProdutoComponent {
     this.produtosSelecionados = this.produtos.filter(
       (produto) => produto.selecionado
     );
-    if (this.idFuncionario != null) {    
-        console.log(this.itemsCarrinho)
-        this.produtosSelecionados.forEach((produto) => {
-          const carrinho: CarrinhoEnvio = {
-            funcionarioId: this.idFuncionario!,
-            produtoId: Number(produto.id),
-          };
-          this.itemsCarrinho.push(carrinho);
-        });
-      this.carrinhoService.addItemNoCarrinho(this.itemsCarrinho).subscribe();
-      this.router.navigate([`/vendas/${this.idFuncionario}`]).then(() => {
-        window.location.reload();
+    if (this.idFuncionario != null) {
+      console.log(this.itemsCarrinho);
+      this.produtosSelecionados.forEach((produto) => {
+        const carrinho: CarrinhoEnvio = {
+          funcionarioId: this.idFuncionario!,
+          produtoId: Number(produto.id),
+        };
+        this.itemsCarrinho.push(carrinho);
       });
+      this.carrinhoService
+        .addItemNoCarrinho(this.itemsCarrinho)
+        .subscribe(() => {
+          this.router.navigate([`/vendas/${this.idFuncionario}`]).then(() => {
+            window.location.reload();
+          });
+        });
     } else {
       this.mensagemService.add('Id do Funcionário não foi passado!');
     }
