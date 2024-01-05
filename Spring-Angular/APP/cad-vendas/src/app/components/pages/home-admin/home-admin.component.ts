@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { faAddressBook, faHandsHelping, faTShirt } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-home-admin',
@@ -6,5 +7,7 @@ import { Component } from '@angular/core';
   styleUrl: './home-admin.component.css'
 })
 export class HomeAdminComponent {
-
+  faAddressBook = faAddressBook
+  faHandsHelping = faHandsHelping
+  faTShirt = faTShirt
 }
