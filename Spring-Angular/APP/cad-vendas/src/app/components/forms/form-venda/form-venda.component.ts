@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { VendaDTO } from '../../../interfaces/VendaDTO';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FuncionarioService } from '../../../services/funcionario.service';
@@ -13,7 +13,7 @@ import { MensagensService } from '../../../services/mensagens.service';
   templateUrl: './form-venda.component.html',
   styleUrl: './form-venda.component.css',
 })
-export class FormVendaComponent {
+export class FormVendaComponent implements OnInit{
   @Output() onSubmit = new EventEmitter<VendaDTO>();
   @Input() btnText!: string;
   valorVenda: string = '';

@@ -1,4 +1,4 @@
-import { ChangeDetectorRef, Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Produto } from '../../../interfaces/Produto';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ProdutoService } from '../../../services/produto.service';
@@ -12,7 +12,7 @@ import { CarrinhoEnvio } from '../../../interfaces/CarrinhoAdd';
   templateUrl: './carrinho-produto.component.html',
   styleUrl: './carrinho-produto.component.css',
 })
-export class CarrinhoProdutoComponent {
+export class CarrinhoProdutoComponent implements OnInit {
   allProdutos: Produto[] = [];
   produtos: Produto[] = [];
   produtosSelecionados: Produto[] = [];
@@ -26,7 +26,7 @@ export class CarrinhoProdutoComponent {
     private route: ActivatedRoute,
     private carrinhoService: CarrinhoService,
     private mensagemService: MensagensService,
-    private router: Router,
+    private router: Router
   ) {}
 
   ngOnInit(): void {

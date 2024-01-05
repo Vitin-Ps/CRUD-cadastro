@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Funcionario } from '../../../interfaces/Funcionario';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './form-func.component.html',
   styleUrl: './form-func.component.css'
 })
-export class FormFuncComponent {
+export class FormFuncComponent implements OnInit{
   @Output() onSubmit = new EventEmitter<Funcionario>();
   @Input() btnText!: string;
   @Input() funcData: Funcionario | null = null; // para atualização

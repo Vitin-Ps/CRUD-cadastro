@@ -1,4 +1,4 @@
-import { Component, EventEmitter, Input, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { Produto } from '../../../interfaces/Produto';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 
@@ -7,7 +7,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
   templateUrl: './form-produto.component.html',
   styleUrl: './form-produto.component.css'
 })
-export class FormProdutoComponent {
+export class FormProdutoComponent implements OnInit{
   @Output() onSubmit = new EventEmitter<Produto>();
   @Input() btnText!: string;
   @Input() prodData: Produto | null = null;
