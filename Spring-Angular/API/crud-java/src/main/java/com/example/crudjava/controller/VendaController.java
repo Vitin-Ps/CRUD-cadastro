@@ -44,8 +44,7 @@ public class VendaController {
 
     @DeleteMapping("/{id}")
     @Transactional
-    // o PathVariable vai pegar a informação da url delete
-    public ResponseEntity apagarDefinitivo(@PathVariable Long id) {
+    public ResponseEntity apagar(@PathVariable Long id) {
         service.excluirVenda(id);
         return ResponseEntity.noContent().build();
     }

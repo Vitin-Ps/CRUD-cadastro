@@ -36,12 +36,14 @@ public class CarrinhoService {
     public void removerItemDoCarrinho(List<DadosCarrinho> dadosList) {
         for (DadosCarrinho dados : dadosList) {
             var carrinho = carrinhoRepository.findFirstByFuncionarioIdAndProdutoId(dados.funcionarioId(), dados.produtoId());
+            if(carrinho == null) throw new ValidacaoException("item não está no carrinho");
             carrinhoRepository.deleteById(carrinho.getId());
         }
     }
 
     public void limparCarrinho(Long funcionarioId) {
-        carrinhoRepository.deleteAllByFuncionarioId(funcionarioId);
+        var res = carrinhoRepository.deleteAllByFuncionarioId(funcionarioId);
+        if(res == 0) throw new ValidacaoException("carrinho já está vazio");
     }
 
     public Page<DadosListagemCarrinho> listarCarrinho(Long id, Pageable pageable) {
