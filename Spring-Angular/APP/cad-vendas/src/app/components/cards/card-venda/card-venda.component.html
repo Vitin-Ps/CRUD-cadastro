@@ -1,0 +1,29 @@
+<div class="card-venda">
+  <h2>{{ id }}</h2>
+  <h2 class="nome">
+    <fa-icon [icon]="faUser"></fa-icon>
+    {{ nome }}
+  </h2>
+  <h2>
+    <fa-icon [icon]="faShoppingBag"></fa-icon>
+    R${{ valorTotal }}
+  </h2>
+  <h2>
+    <fa-icon [icon]="faMoneyBill"></fa-icon>
+    R${{ comissao }}
+  </h2>
+  <div class="acao">
+    <a routerLink=""
+      ><button class="btn-padrao btn-acao">
+        <fa-icon [icon]="faEdit"></fa-icon>
+        Editar
+      </button></a
+    >
+    <a routerLink=""
+      ><button class="btn-padrao btn-acao">
+        <fa-icon [icon]="faTrashAlt"></fa-icon>
+        Excluir
+      </button></a
+    >
+  </div>
+</div>

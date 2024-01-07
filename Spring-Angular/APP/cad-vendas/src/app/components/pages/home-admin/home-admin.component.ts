@@ -10,4 +10,5 @@ export class HomeAdminComponent {
   faAddressBook = faAddressBook
   faHandsHelping = faHandsHelping
   faTShirt = faTShirt
+  btnText = "Ver"
 }

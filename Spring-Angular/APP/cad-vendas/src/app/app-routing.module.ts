@@ -7,6 +7,9 @@ import { CadVendaComponent } from './components/pages/cad-venda/cad-venda.compon
 import { SobreComponent } from './components/pages/sobre/sobre.component';
 import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
 import { HomeAdminComponent } from './components/pages/home-admin/home-admin.component';
+import { FuncDadosComponent } from './components/pages/func-dados/func-dados.component';
+import { ProdDadosComponent } from './components/pages/prod-dados/prod-dados.component';
+import { VendasDadosComponent } from './components/pages/vendas-dados/vendas-dados.component';
 
 
 const routes: Routes = [
@@ -18,8 +21,10 @@ const routes: Routes = [
   {path:"vendas/:id", component:CadVendaComponent},
   {path:"sobre", component:SobreComponent},
   {path:"carrinho-produtos/:id", component:CarrinhoProdutoComponent},
-  {path:"home/area-administrativa", component:HomeAdminComponent}
-
+  {path:"home/area-administrativa", component:HomeAdminComponent},
+  {path:"home/funcionarios", component: FuncDadosComponent},
+  {path:"home/produtos", component:ProdDadosComponent},
+  {path:"home/vendas", component:VendasDadosComponent},
 ];
 
 @NgModule({

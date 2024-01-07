@@ -21,6 +21,13 @@ import { FormProdutoComponent } from './components/forms/form-produto/form-produ
 import { CarrinhoProdutoComponent } from './components/pages/carrinho-produto/carrinho-produto.component';
 import { FormVendaComponent } from './components/forms/form-venda/form-venda.component';
 import { HomeAdminComponent } from './components/pages/home-admin/home-admin.component';
+import { FuncDadosComponent } from './components/pages/func-dados/func-dados.component';
+import { VendasDadosComponent } from './components/pages/vendas-dados/vendas-dados.component';
+import { ProdDadosComponent } from './components/pages/prod-dados/prod-dados.component';
+import { CardFuncionalidadeComponent } from './components/cards/card-funcionalidade/card-funcionalidade.component';
+import { CardVendaComponent } from './components/cards/card-venda/card-venda.component';
+import { CardFuncComponent } from './components/cards/card-func/card-func.component';
+import { ConversaoMoedaReal } from './pipes/ConversaoMoedaReal.pipe';
 
 @NgModule({
   declarations: [
@@ -39,7 +46,14 @@ import { HomeAdminComponent } from './components/pages/home-admin/home-admin.com
     FormProdutoComponent,
     CarrinhoProdutoComponent,
     FormVendaComponent,
-    HomeAdminComponent
+    HomeAdminComponent,
+    FuncDadosComponent,
+    VendasDadosComponent,
+    ProdDadosComponent,
+    CardFuncionalidadeComponent,
+    CardVendaComponent,
+    CardFuncComponent,
+    ConversaoMoedaReal,
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,30 @@
+<div class="filtro-venda-container">
+  <h2>Filtre pelo funcionário:</h2>
+  <select (change)="selecionarFuncionario($event)">
+    <option value="{{ null }}" selected disabled>Selecione</option>
+    <option
+      *ngFor="let venda of totalVendas"
+      value="{{ venda.funcionario.id }}"
+    >
+      {{ venda.funcionario.nome }}
+    </option>
+  </select>
+</div>
+<div class="venda-total-container" *ngIf="totalVendasDoFuncionario !== null">
+    <h3>
+        Vendas {{totalVendasDoFuncionario.vendas}}
+    </h3>
+    <h3>
+        Total {{totalVendasDoFuncionario.valorTotal | moedaReal}}
+    </h3>
+    <h3>Comissão {{totalVendasDoFuncionario.comissao | moedaReal}}</h3>
+</div>
+<div class="vendas-container">
+  <app-card-venda
+    *ngFor="let venda of vendas"
+    id="{{ venda.id }}"
+    nome="{{ venda.funcionario.nome }}"
+    valorTotal="{{ venda.valor }}"
+    comissao="{{ venda.comissao }}"
+  />
+</div>
