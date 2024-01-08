@@ -5,8 +5,10 @@ import { Injectable } from '@angular/core';
 })
 export class MensagensService {
   mensagem: string = '';
+  type: string = '';
   constructor() { }
-  add(mensagem: string) {
+  alert(mensagem: string) {
+    this.type = 'alert';
     this.mensagem = mensagem;
 
     setTimeout(() => {
@@ -16,5 +18,14 @@ export class MensagensService {
 
   clear() {
     this.mensagem = ''
+  }
+
+  confirm(mensagem: string) {
+    this.type = 'confirm';
+    this.mensagem = mensagem;
+    console.log("chegou no confirm")
+    setTimeout(() => {
+      this.clear();
+    }, 10000);
   }
 }

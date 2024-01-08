@@ -94,7 +94,7 @@
   margin: 1em 0;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1000px) {
   .status-lojinha-container,
   .main-container {
     width: 100%;

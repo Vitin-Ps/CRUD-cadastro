@@ -30,7 +30,7 @@
       nome="{{ venda.funcionario.nome }}"
       [valorTotal]="venda.venda"
       [comissao]="venda.comissao!"
-      class="teste"
+      (emitFunction)="chamarConfirm(venda.id!)"
     />
   </div>
 </div>

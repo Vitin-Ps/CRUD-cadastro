@@ -3,9 +3,9 @@ import { Produto } from '../../../interfaces/Produto';
 import { faSearch } from '@fortawesome/free-solid-svg-icons';
 import { ProdutoService } from '../../../services/produto.service';
 import { ActivatedRoute, Router } from '@angular/router';
-import { CarrinhoService } from '../../../services/carrinho.service';
 import { MensagensService } from '../../../services/mensagens.service';
-import { CarrinhoEnvio } from '../../../interfaces/CarrinhoAdd';
+import { CarrinhoEnvio } from '../../../interfaces/Carrinho';
+import { CarrinhoService } from '../../../services/carrinho.service';
 
 @Component({
   selector: 'app-carrinho-produto',
@@ -72,7 +72,7 @@ export class CarrinhoProdutoComponent implements OnInit {
           });
         });
     } else {
-      this.mensagemService.add('Id do Funcionário não foi passado!');
+      this.mensagemService.alert('Id do Funcionário não foi passado!');
     }
   }
 }

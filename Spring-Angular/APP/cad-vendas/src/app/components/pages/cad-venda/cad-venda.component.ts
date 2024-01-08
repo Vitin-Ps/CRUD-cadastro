@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
-import { VendaDTO } from '../../../interfaces/VendaDTO';
 import { VendaService } from '../../../services/venda.service';
 import { MensagensService } from '../../../services/mensagens.service';
 import { CarrinhoService } from '../../../services/carrinho.service';
 import { Router } from '@angular/router';
+import { VendaDTO } from '../../../interfaces/Venda';
 
 @Component({
   selector: 'app-cad-venda',
@@ -26,18 +26,18 @@ export class CadVendaComponent {
     this.vendaService.registrarVenda(venda).subscribe(
       (response) => {
         console.log('Resposta do servidor:', response);
-        this.mensagemService.add(`Venda cadastrada com Sucesso!`);
+        this.mensagemService.alert(`Venda cadastrada com Sucesso!`);
         this.carrinhoService.limparCarrinho(venda.idFuncionario).subscribe();
         this.router.navigate(['/']);
       },
       (error) => {
         console.error('Erro na requisição:', error);
         if (error.status === 0) {
-          this.mensagemService.add(
+          this.mensagemService.alert(
             'Erro: Não foi possível conectar à API. Verifique se a API está ligada.'
           );
         } else {
-          this.mensagemService.add(
+          this.mensagemService.alert(
             'Erro desconhecido ao cadastrar funcionário.'
           );
         }

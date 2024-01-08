@@ -49,4 +49,10 @@ public class VendaController {
         return ResponseEntity.noContent().build();
     }
 
+    @GetMapping("/status")
+    public ResponseEntity statusLojinha() {
+        var dto = service.statusLojinha();
+        return ResponseEntity.ok(dto);
+    }
+
 }

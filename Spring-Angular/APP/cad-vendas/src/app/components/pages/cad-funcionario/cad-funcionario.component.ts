@@ -22,7 +22,7 @@ export class CadFuncionarioComponent {
     this.funcService.registraFuncionario(funcionario).subscribe(
       (response) => {
         console.log('Resposta do servidor:', response);
-        this.mensagemService.add(`Funcionário ${funcionario.nome} cadastrado com Sucesso!`);
+        this.mensagemService.alert(`Funcionário ${funcionario.nome} cadastrado com Sucesso!`);
         this.router.navigate(['/']);
       },
       (error) => {
@@ -30,10 +30,10 @@ export class CadFuncionarioComponent {
         console.error('Erro na requisição:', error);
         if (error.status === 0) {
           // Status 0 geralmente indica falha na conexão
-          this.mensagemService.add("Erro: Não foi possível conectar à API. Verifique se a API está ligada.");
+          this.mensagemService.alert("Erro: Não foi possível conectar à API. Verifique se a API está ligada.");
         } else {
           // Outros códigos de status
-          this.mensagemService.add("Erro desconhecido ao cadastrar funcionário.");
+          this.mensagemService.alert("Erro desconhecido ao cadastrar funcionário.");
         }
       }
     );

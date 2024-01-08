@@ -1,5 +1,4 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { VendaDTO } from '../../../interfaces/VendaDTO';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { FuncionarioService } from '../../../services/funcionario.service';
 import { Funcionario } from '../../../interfaces/Funcionario';
@@ -7,6 +6,7 @@ import { ActivatedRoute } from '@angular/router';
 import { CarrinhoService } from '../../../services/carrinho.service';
 import { Carrinho } from '../../../interfaces/Carrinho';
 import { MensagensService } from '../../../services/mensagens.service';
+import { VendaDTO } from '../../../interfaces/Venda';
 
 @Component({
   selector: 'app-form-venda',
@@ -116,7 +116,7 @@ export class FormVendaComponent implements OnInit{
   limparCarrinho(e: Event): void {
     e.preventDefault();
     if(this.valorVenda == "") {
-      this.mensagemService.add("Carrinho já está vazio!");
+      this.mensagemService.alert("Carrinho já está vazio!");
       return;
     }
     if (this.funcionarioSelecionado != null) {

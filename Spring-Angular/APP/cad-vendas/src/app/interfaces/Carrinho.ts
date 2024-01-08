@@ -6,3 +6,9 @@ export interface Carrinho {
     funcionario: Funcionario,
     produto: Produto
 }
+
+export interface CarrinhoEnvio {
+    id?: number,
+    funcionarioId: number;
+    produtoId: number
+}

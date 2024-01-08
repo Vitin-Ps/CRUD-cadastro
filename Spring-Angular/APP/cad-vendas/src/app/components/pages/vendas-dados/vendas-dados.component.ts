@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
 import { Venda } from '../../../interfaces/Venda';
 import { VendaService } from '../../../services/venda.service';
+import { ComunicacaoService } from '../../../services/comunicacao.service';
+import { Router } from '@angular/router';
+import { MensagensService } from '../../../services/mensagens.service';
 
 @Component({
   selector: 'app-vendas-dados',
@@ -12,13 +15,19 @@ export class VendasDadosComponent implements OnInit {
   vendas: Venda[] = [];
   totalVendas: Venda[] = [];
   idFuncSelecionario: number = 0;
+  idVendaSelecionada: number = 0;
   totalVendasDoFuncionario: {
     vendas: number;
     valorTotal: number;
     comissao: number;
   } | null = null;
 
-  constructor(private vendaService: VendaService) {}
+  constructor(
+    private vendaService: VendaService,
+    private comunicacaoService: ComunicacaoService,
+    private mensagemService: MensagensService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {
     this.vendaService.listarVendas().subscribe((item) => {
@@ -27,6 +36,10 @@ export class VendasDadosComponent implements OnInit {
       this.vendas = data;
       this.agruparVendasPorFuncionario();
       this.calcularDadosFuncionario();
+      this.comunicacaoService.emitFunction.subscribe(() => {
+        console.log('chegou aqui no emitter');
+        if(this.idVendaSelecionada != 0) this.removerVenda();
+      });
     });
   }
   agruparVendasPorFuncionario() {
@@ -73,20 +86,19 @@ export class VendasDadosComponent implements OnInit {
     let vendas: number = 0;
     let comissao: number = 0;
     let valorTotal: number = 0;
-  
+
     this.vendas.forEach((venda) => {
       vendas++;
       comissao += venda.comissao!;
       valorTotal += venda.venda;
     });
-  
+
     this.totalVendasDoFuncionario = {
       vendas: vendas,
       valorTotal: valorTotal,
       comissao: comissao,
     };
   }
-  
 
   selecionarFuncionario(e: Event) {
     const target = e.target as HTMLInputElement;
@@ -94,5 +106,17 @@ export class VendasDadosComponent implements OnInit {
     this.idFuncSelecionario = Number(value);
     this.calcularDadosFuncionario();
   }
-    
+
+  async removerVenda() {
+    await this.vendaService.excluirVenda(this.idVendaSelecionada).subscribe(() => {
+      this.idVendaSelecionada = 0;
+      window.location.reload()
+    });
+  }
+
+  chamarConfirm(id: number) {
+    console.log('chegou aqui: ' + id);
+    this.idVendaSelecionada = id;
+    this.mensagemService.confirm("Tem certeza que quer excluir essa venda?");
+  }
 }

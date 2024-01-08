@@ -18,6 +18,7 @@
 }
 
 .filtro-venda-container select {
+  min-width: 150px;
   padding: .5em 1em;
   border-radius: 5px;
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.080);

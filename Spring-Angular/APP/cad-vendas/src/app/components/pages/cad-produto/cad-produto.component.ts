@@ -21,7 +21,7 @@ export class CadProdutoComponent {
   async cadastrarProduto(produto: Produto) {
     this.prodService.cadastraProduto(produto).subscribe(
       (response) => {
-        this.mensagemService.add(`${produto.nome} adicionado com sucesso!`);
+        this.mensagemService.alert(`${produto.nome} adicionado com sucesso!`);
         this.router.navigate(['/']);
       },
       (error) => {
@@ -29,10 +29,10 @@ export class CadProdutoComponent {
          console.error('Erro na requisição:', error);
          if (error.status === 0) {
            // Status 0 geralmente indica falha na conexão
-           this.mensagemService.add("Erro: Não foi possível conectar à API. Verifique se a API está ligada.");
+           this.mensagemService.alert("Erro: Não foi possível conectar à API. Verifique se a API está ligada.");
          } else {
            // Outros códigos de status
-           this.mensagemService.add("Erro desconhecido ao cadastrar Produto.");
+           this.mensagemService.alert("Erro desconhecido ao cadastrar Produto.");
          }
       }
     );

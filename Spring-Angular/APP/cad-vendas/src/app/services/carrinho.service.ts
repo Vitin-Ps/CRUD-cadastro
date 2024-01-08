@@ -2,9 +2,8 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { Carrinho } from '../interfaces/Carrinho';
+import { Carrinho, CarrinhoEnvio } from '../interfaces/Carrinho';
 import { Response } from '../interfaces/Response';
-import { CarrinhoEnvio } from '../interfaces/CarrinhoAdd';
 
 @Injectable({
   providedIn: 'root',

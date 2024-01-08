@@ -8,6 +8,8 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class VendaService {
     @Autowired
@@ -44,4 +46,21 @@ public class VendaService {
     public void excluirVenda(Long id) {
         vendaRepository.deleteById(id);
     }
+
+    public DadosStatusLojinha statusLojinha() {
+        List<Object[]> dados = vendaRepository.recuperarStatusLojinha();
+
+        if (dados != null && !dados.isEmpty() && dados.get(0).length == 3) {
+            Object[] innerArray = dados.get(0);
+            Long funcionarios = ((Number) innerArray[0]).longValue();
+            Long produtos = ((Number) innerArray[1]).longValue();
+            Long vendas = ((Number) innerArray[2]).longValue();
+
+            return new DadosStatusLojinha(funcionarios, produtos, vendas);
+        } else {
+           throw new ValidacaoException("Não foi possivel recuperar os dados!!!");
+        }
+    }
+
+
 }

@@ -6,11 +6,11 @@
   </h2>
   <h2>
     <fa-icon [icon]="faShoppingBag"></fa-icon>
-    {{ valorTotal | moedaReal}}
+    {{ valorTotal | moedaReal }}
   </h2>
   <h2>
     <fa-icon [icon]="faMoneyBill"></fa-icon>
-    {{ comissao | moedaReal}}
+    {{ comissao | moedaReal }}
   </h2>
   <div class="acao">
     <a routerLink=""
@@ -19,11 +19,9 @@
         Editar
       </button></a
     >
-    <a routerLink=""
-      ><button class="btn-padrao btn-acao">
-        <fa-icon [icon]="faTrashAlt"></fa-icon>
-        Excluir
-      </button></a
-    >
+    <button class="btn-padrao btn-acao" (click)="ativarBtnExcluir()">
+      <fa-icon [icon]="faTrashAlt"></fa-icon>
+      Excluir
+    </button>
   </div>
 </div>
