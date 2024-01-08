@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Venda } from '../../../interfaces/Venda';
+import { VendaService } from '../../../services/venda.service';
 
 @Component({
   selector: 'app-vendas-dados',
@@ -7,107 +8,8 @@ import { Venda } from '../../../interfaces/Venda';
   styleUrl: './vendas-dados.component.css',
 })
 export class VendasDadosComponent implements OnInit {
-  vendas: Venda[] = [
-    {
-      id: 1,
-      funcionario: {
-        id: 1,
-        nome: 'Victor Soares',
-        email: 'victor@email.com',
-        porcentagem: 12,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 2,
-      funcionario: {
-        id: 1,
-        nome: 'Victor Soares',
-        email: 'victor@email.com',
-        porcentagem: 12,
-      },
-      valor: 587.99,
-      comissao: 58.79,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 450.35,
-      comissao: 45.03,
-    },
-    {
-      id: 3,
-      funcionario: {
-        id: 2,
-        nome: 'João',
-        email: 'joao@email.com',
-        porcentagem: 6,
-      },
-      valor: 45000.35,
-      comissao: 45.03,
-    },
-  ];
+  vendasTotal: Venda[] = [];
+  vendas: Venda[] = [];
   totalVendas: Venda[] = [];
   idFuncSelecionario: number = 0;
   totalVendasDoFuncionario: {
@@ -116,8 +18,16 @@ export class VendasDadosComponent implements OnInit {
     comissao: number;
   } | null = null;
 
+  constructor(private vendaService: VendaService) {}
+
   ngOnInit(): void {
-    this.agruparVendasPorFuncionario();
+    this.vendaService.listarVendas().subscribe((item) => {
+      const data = item.content;
+      this.vendasTotal = data;
+      this.vendas = data;
+      this.agruparVendasPorFuncionario();
+      this.calcularDadosFuncionario();
+    });
   }
   agruparVendasPorFuncionario() {
     /*
@@ -132,14 +42,14 @@ export class VendasDadosComponent implements OnInit {
     */
     const mapaVendas: Map<string, Venda> = new Map();
 
-    this.vendas.forEach((venda) => {
+    this.vendasTotal.forEach((venda) => {
       const key = venda.funcionario.nome;
 
       if (mapaVendas.has(key)) {
         const vendaExistente = mapaVendas.get(key);
 
         // Mesclar valores para o funcionário existente
-        vendaExistente!.valor += venda.valor;
+        vendaExistente!.venda += venda.venda;
         vendaExistente!.comissao! += venda.comissao!;
       } else {
         // Adicionar nova entrada no mapa
@@ -152,29 +62,37 @@ export class VendasDadosComponent implements OnInit {
     this.totalVendas = Array.from(mapaVendas.values());
   }
 
-  selecionarFuncionario(e: Event) {
-    const target = e.target as HTMLInputElement;
-    const value = target.value;
-    this.idFuncSelecionario = Number(value);
-
-    const vendasPorFuncionario: Venda[] = this.vendas.filter(
-      (venda) => venda.funcionario.id === this.idFuncSelecionario
-    );
-
+  calcularDadosFuncionario() {
+    if (this.idFuncSelecionario != 0) {
+      this.vendas = this.vendasTotal.filter(
+        (venda) => venda.funcionario.id === this.idFuncSelecionario
+      );
+    } else {
+      this.vendas = this.vendasTotal;
+    }
     let vendas: number = 0;
     let comissao: number = 0;
     let valorTotal: number = 0;
-
-    vendasPorFuncionario.forEach((venda) => {
+  
+    this.vendas.forEach((venda) => {
       vendas++;
       comissao += venda.comissao!;
-      valorTotal += venda.valor;
+      valorTotal += venda.venda;
     });
-
+  
     this.totalVendasDoFuncionario = {
       vendas: vendas,
       valorTotal: valorTotal,
       comissao: comissao,
     };
   }
+  
+
+  selecionarFuncionario(e: Event) {
+    const target = e.target as HTMLInputElement;
+    const value = target.value;
+    this.idFuncSelecionario = Number(value);
+    this.calcularDadosFuncionario();
+  }
+    
 }
