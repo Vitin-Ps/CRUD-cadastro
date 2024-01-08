@@ -20,9 +20,9 @@ export class VendasDadosComponent implements OnInit {
       comissao: 45.03,
     },
     {
-      id: 1,
+      id: 2,
       funcionario: {
-        id: 2,
+        id: 1,
         nome: 'Victor Soares',
         email: 'victor@email.com',
         porcentagem: 12,
@@ -31,14 +31,80 @@ export class VendasDadosComponent implements OnInit {
       comissao: 58.79,
     },
     {
-      id: 2,
+      id: 3,
       funcionario: {
-        id: 1,
+        id: 2,
         nome: 'João',
         email: 'joao@email.com',
         porcentagem: 6,
       },
       valor: 450.35,
+      comissao: 45.03,
+    },
+    {
+      id: 3,
+      funcionario: {
+        id: 2,
+        nome: 'João',
+        email: 'joao@email.com',
+        porcentagem: 6,
+      },
+      valor: 450.35,
+      comissao: 45.03,
+    },
+    {
+      id: 3,
+      funcionario: {
+        id: 2,
+        nome: 'João',
+        email: 'joao@email.com',
+        porcentagem: 6,
+      },
+      valor: 450.35,
+      comissao: 45.03,
+    },
+    {
+      id: 3,
+      funcionario: {
+        id: 2,
+        nome: 'João',
+        email: 'joao@email.com',
+        porcentagem: 6,
+      },
+      valor: 450.35,
+      comissao: 45.03,
+    },
+    {
+      id: 3,
+      funcionario: {
+        id: 2,
+        nome: 'João',
+        email: 'joao@email.com',
+        porcentagem: 6,
+      },
+      valor: 450.35,
+      comissao: 45.03,
+    },
+    {
+      id: 3,
+      funcionario: {
+        id: 2,
+        nome: 'João',
+        email: 'joao@email.com',
+        porcentagem: 6,
+      },
+      valor: 450.35,
+      comissao: 45.03,
+    },
+    {
+      id: 3,
+      funcionario: {
+        id: 2,
+        nome: 'João',
+        email: 'joao@email.com',
+        porcentagem: 6,
+      },
+      valor: 45000.35,
       comissao: 45.03,
     },
   ];
@@ -90,21 +156,25 @@ export class VendasDadosComponent implements OnInit {
     const target = e.target as HTMLInputElement;
     const value = target.value;
     this.idFuncSelecionario = Number(value);
-  
+
     const vendasPorFuncionario: Venda[] = this.vendas.filter(
       (venda) => venda.funcionario.id === this.idFuncSelecionario
     );
-  
+
     let vendas: number = 0;
     let comissao: number = 0;
     let valorTotal: number = 0;
-  
+
     vendasPorFuncionario.forEach((venda) => {
-      vendas ++;
+      vendas++;
       comissao += venda.comissao!;
       valorTotal += venda.valor;
     });
-  
-    this.totalVendasDoFuncionario = { vendas: vendas, valorTotal: valorTotal, comissao: comissao };
-  }  
+
+    this.totalVendasDoFuncionario = {
+      vendas: vendas,
+      valorTotal: valorTotal,
+      comissao: comissao,
+    };
+  }
 }

@@ -6,11 +6,11 @@
   </h2>
   <h2>
     <fa-icon [icon]="faShoppingBag"></fa-icon>
-    R${{ valorTotal }}
+    {{ valorTotal | moedaReal}}
   </h2>
   <h2>
     <fa-icon [icon]="faMoneyBill"></fa-icon>
-    R${{ comissao }}
+    {{ comissao | moedaReal}}
   </h2>
   <div class="acao">
     <a routerLink=""

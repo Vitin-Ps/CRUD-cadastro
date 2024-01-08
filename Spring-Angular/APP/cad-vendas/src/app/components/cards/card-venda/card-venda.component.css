@@ -1,6 +1,6 @@
 .card-venda {
     background-color: #f7fafa;
-    width: 80%;
+    width: 90%;
     margin-bottom: .5em;
     padding: 1em 0.5em;
     display: flex;
@@ -15,6 +15,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    letter-spacing: .8px;
   }
 
   .card-venda h2.nome {

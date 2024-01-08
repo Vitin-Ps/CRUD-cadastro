@@ -9,8 +9,8 @@ import { faEdit, faMoneyBill, faShoppingBag, faTrashAlt, faUser } from '@fortawe
 export class CardVendaComponent {
   @Input() id: string = '';
   @Input() nome: string = '';
-  @Input() valorTotal: string = '';
-  @Input() comissao: string = '';
+  @Input() valorTotal: number = 0;
+  @Input() comissao: number = 0;
 
   faUser = faUser;
   faShoppingBag = faShoppingBag;
