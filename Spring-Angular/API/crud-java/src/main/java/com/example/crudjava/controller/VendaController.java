@@ -30,9 +30,15 @@ public class VendaController {
         return ResponseEntity.ok(page);
     }
     @GetMapping("/{id}")
-    public ResponseEntity<Page<DadosListagemVenda>> listarVendasPorId(@PathVariable Long id, @PageableDefault(size = 10, page = 0, sort = {"funcionario_id"})Pageable pageable) {
-        var page = service.listarVendasPorId(id, pageable);
+    public ResponseEntity<Page<DadosListagemVenda>> listarVendasPorIdFuncionario(@PathVariable Long id, @PageableDefault(size = 10, page = 0, sort = {"funcionario_id"})Pageable pageable) {
+        var page = service.listarVendasPorIdFuncionario(id, pageable);
         return ResponseEntity.ok(page);
+    }
+
+    @GetMapping("/{id}/detalhar")
+    public ResponseEntity listarVendasPorId(@PathVariable Long id) {
+        var dto = service.listarVendasPorId(id);
+        return ResponseEntity.ok(dto);
     }
 
     @PutMapping

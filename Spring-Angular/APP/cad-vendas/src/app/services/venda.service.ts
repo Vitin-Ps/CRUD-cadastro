@@ -23,6 +23,14 @@ export class VendaService {
   listarVendas(): Observable<Response<Venda[]>> {
     return this.http.get<Response<Venda[]>>(this.apiUrl);
   }
+
+  detalharVenda(id:number): Observable<Venda> {
+    return this.http.get<Venda>(`${this.apiUrl}/${id}/detalhar`);
+  }
+
+  alterarVenda(venda: VendaDTO): Observable<Venda> {
+    return this.http.put<Venda>(this.apiUrl, venda);
+  }
   
   excluirVenda(id: number) {
     return this.http.delete(`${this.apiUrl}/${id}`);

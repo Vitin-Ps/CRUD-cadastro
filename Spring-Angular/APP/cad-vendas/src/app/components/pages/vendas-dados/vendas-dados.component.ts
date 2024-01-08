@@ -26,7 +26,6 @@ export class VendasDadosComponent implements OnInit {
     private vendaService: VendaService,
     private comunicacaoService: ComunicacaoService,
     private mensagemService: MensagensService,
-    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -37,7 +36,6 @@ export class VendasDadosComponent implements OnInit {
       this.agruparVendasPorFuncionario();
       this.calcularDadosFuncionario();
       this.comunicacaoService.emitFunction.subscribe(() => {
-        console.log('chegou aqui no emitter');
         if(this.idVendaSelecionada != 0) this.removerVenda();
       });
     });

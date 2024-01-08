@@ -13,8 +13,6 @@ import { CadFuncionarioComponent } from './components/pages/cad-funcionario/cad-
 import { CadVendaComponent } from './components/pages/cad-venda/cad-venda.component';
 import { CadProdutoComponent } from './components/pages/cad-produto/cad-produto.component';
 import { SobreComponent } from './components/pages/sobre/sobre.component';
-import { FormularioDinamicoFilhoComponent } from './components/testes/formulario-dinamico-filho/formulario-dinamico-filho.component';
-import { FormularioDinamicoPaiComponent } from './components/testes/formulario-dinamico-pai/formulario-dinamico-pai.component';
 import { FormFuncComponent } from './components/forms/form-func/form-func.component';
 import { MensagensComponent } from './components/mensagens/mensagens.component';
 import { FormProdutoComponent } from './components/forms/form-produto/form-produto.component';
@@ -28,6 +26,7 @@ import { CardFuncionalidadeComponent } from './components/cards/card-funcionalid
 import { CardVendaComponent } from './components/cards/card-venda/card-venda.component';
 import { CardFuncComponent } from './components/cards/card-func/card-func.component';
 import { ConversaoMoedaReal } from './pipes/ConversaoMoedaReal.pipe';
+import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.component';
 
 @NgModule({
   declarations: [
@@ -39,8 +38,6 @@ import { ConversaoMoedaReal } from './pipes/ConversaoMoedaReal.pipe';
     CadVendaComponent,
     CadProdutoComponent,
     SobreComponent,
-    FormularioDinamicoFilhoComponent,
-    FormularioDinamicoPaiComponent,
     FormFuncComponent,
     MensagensComponent,
     FormProdutoComponent,
@@ -54,6 +51,7 @@ import { ConversaoMoedaReal } from './pipes/ConversaoMoedaReal.pipe';
     CardVendaComponent,
     CardFuncComponent,
     ConversaoMoedaReal,
+    EditVendaComponent,
   ],
   imports: [
     BrowserModule,

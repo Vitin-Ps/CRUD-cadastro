@@ -10,6 +10,7 @@ import { HomeAdminComponent } from './components/pages/home-admin/home-admin.com
 import { FuncDadosComponent } from './components/pages/func-dados/func-dados.component';
 import { ProdDadosComponent } from './components/pages/prod-dados/prod-dados.component';
 import { VendasDadosComponent } from './components/pages/vendas-dados/vendas-dados.component';
+import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.component';
 
 
 const routes: Routes = [
@@ -19,6 +20,7 @@ const routes: Routes = [
   {path:"produtos", component:CadProdutoComponent},
   {path:"vendas", component:CadVendaComponent},
   {path:"vendas/:id", component:CadVendaComponent},
+  {path:"vendas/edit/:id", component:EditVendaComponent},
   {path:"sobre", component:SobreComponent},
   {path:"carrinho-produtos/:id", component:CarrinhoProdutoComponent},
   {path:"home/area-administrativa", component:HomeAdminComponent},

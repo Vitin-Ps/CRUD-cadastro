@@ -32,8 +32,12 @@ public class VendaService {
     public Page<DadosListagemVenda> listarVendas(Pageable pageable) {
         return vendaRepository.findAll(pageable).map(DadosListagemVenda::new);
     }
-    public Page<DadosListagemVenda> listarVendasPorId(Long id, Pageable pageable) {
+    public Page<DadosListagemVenda> listarVendasPorIdFuncionario(Long id, Pageable pageable) {
         return vendaRepository.findAllByFuncionarioId(id, pageable).map(DadosListagemVenda::new);
+    }
+
+    public DadosDetalhamentoVenda listarVendasPorId(Long id) {
+        return new DadosDetalhamentoVenda(vendaRepository.getReferenceById(id));
     }
 
     public DadosDetalhamentoVenda atualizaVenda(DadosAtualizaVenda dados) {

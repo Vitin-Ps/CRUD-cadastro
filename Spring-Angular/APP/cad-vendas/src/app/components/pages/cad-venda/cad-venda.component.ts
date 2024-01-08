@@ -1,8 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { VendaService } from '../../../services/venda.service';
 import { MensagensService } from '../../../services/mensagens.service';
 import { CarrinhoService } from '../../../services/carrinho.service';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { VendaDTO } from '../../../interfaces/Venda';
 
 @Component({
@@ -10,15 +10,21 @@ import { VendaDTO } from '../../../interfaces/Venda';
   templateUrl: './cad-venda.component.html',
   styleUrl: './cad-venda.component.css',
 })
-export class CadVendaComponent {
+export class CadVendaComponent implements OnInit{
   btnText: string = 'Registrar';
+  type: string = 'create'
+  idUrl!: number;
 
   constructor(
     private vendaService: VendaService,
     private mensagemService: MensagensService,
     private carrinhoService: CarrinhoService,
+    private route: ActivatedRoute,
     private router: Router
   ) {}
+  ngOnInit(): void {
+    this.idUrl = Number(this.route.snapshot.paramMap.get('id'));
+  }
 
   registrarVenda(venda: VendaDTO) {
     console.log('chegou aqui');
