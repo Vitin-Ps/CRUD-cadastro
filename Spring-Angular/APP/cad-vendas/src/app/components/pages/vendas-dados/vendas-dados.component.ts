@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Venda } from '../../../interfaces/Venda';
 import { VendaService } from '../../../services/venda.service';
 import { ComunicacaoService } from '../../../services/comunicacao.service';
-import { Router } from '@angular/router';
 import { MensagensService } from '../../../services/mensagens.service';
 
 @Component({
@@ -108,7 +107,7 @@ export class VendasDadosComponent implements OnInit {
   async removerVenda() {
     await this.vendaService.excluirVenda(this.idVendaSelecionada).subscribe(() => {
       this.idVendaSelecionada = 0;
-      window.location.reload()
+      window.location.reload();
     });
   }
 
