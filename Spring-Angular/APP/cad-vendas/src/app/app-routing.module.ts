@@ -16,7 +16,7 @@ import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/man
 
 const routes: Routes = [
   // {path:"", component:HomeComponent},
-  {path:"", component:ManipulacaoDivComponent},
+  {path:"", component:HomeComponent},
   {path:"funcionarios", component:CadFuncionarioComponent},
   {path:"produtos", component:CadProdutoComponent},
   {path:"vendas", component:CadVendaComponent},
