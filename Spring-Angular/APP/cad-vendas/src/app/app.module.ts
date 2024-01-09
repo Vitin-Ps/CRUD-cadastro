@@ -29,6 +29,7 @@ import { ConversaoMoedaReal } from './pipes/ConversaoMoedaReal.pipe';
 import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.component';
 import { EditProdComponent } from './components/pages/edit-prod/edit-prod.component';
 import { CardProdComponent } from './components/cards/card-prod/card-prod.component';
+import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/manipulacao-div.component';
 
 @NgModule({
   declarations: [
@@ -56,6 +57,7 @@ import { CardProdComponent } from './components/cards/card-prod/card-prod.compon
     EditVendaComponent,
     EditProdComponent,
     CardProdComponent,
+    ManipulacaoDivComponent,
   ],
   imports: [
     BrowserModule,

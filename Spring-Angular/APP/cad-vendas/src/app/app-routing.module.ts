@@ -11,11 +11,12 @@ import { FuncDadosComponent } from './components/pages/func-dados/func-dados.com
 import { ProdDadosComponent } from './components/pages/prod-dados/prod-dados.component';
 import { VendasDadosComponent } from './components/pages/vendas-dados/vendas-dados.component';
 import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.component';
+import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/manipulacao-div.component';
 
 
 const routes: Routes = [
   // {path:"", component:HomeComponent},
-  {path:"", component:HomeComponent},
+  {path:"", component:ManipulacaoDivComponent},
   {path:"funcionarios", component:CadFuncionarioComponent},
   {path:"produtos", component:CadProdutoComponent},
   {path:"vendas", component:CadVendaComponent},

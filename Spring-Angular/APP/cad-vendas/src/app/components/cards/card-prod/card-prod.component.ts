@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -7,5 +7,9 @@ import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
   styleUrl: './card-prod.component.css'
 })
 export class CardProdComponent {
+  @Input() selecionado!: string;
+  @Input() nome!: string;
+  @Input() valor!: number;
+  
   faMoneyBill = faMoneyBill
 }

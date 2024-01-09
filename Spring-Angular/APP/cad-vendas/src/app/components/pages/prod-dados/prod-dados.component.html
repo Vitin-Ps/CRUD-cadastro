@@ -7,8 +7,8 @@
         <a routerLink=""><button>Editar</button></a>
         <button>Excluir</button>
     </div> -->
-    <div class="cards-container">
-        <app-card-prod></app-card-prod>
+    <div class="cards-container scroll-bar">
+        <app-card-prod *ngFor="let produto of produtos" [nome]="produto.nome" [valor]="produto.valor"></app-card-prod>
     </div>
     <!-- <div class="paginacao-container">
         <button class="btn-padrao btn-invertido">Anterior</button>
