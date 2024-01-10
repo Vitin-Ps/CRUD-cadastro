@@ -14,6 +14,7 @@ import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.com
 import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/manipulacao-div.component';
 import test from 'node:test';
 import { TesteComponent } from './testes/teste/teste.component';
+import { EditProdComponent } from './components/pages/edit-prod/edit-prod.component';
 
 
 const routes: Routes = [
@@ -21,6 +22,7 @@ const routes: Routes = [
   {path:"", component:HomeComponent},
   {path:"funcionarios", component:CadFuncionarioComponent},
   {path:"produtos", component:CadProdutoComponent},
+  {path:"produtos/:id", component:EditProdComponent},
   {path:"vendas", component:CadVendaComponent},
   {path:"vendas/:id", component:CadVendaComponent},
   {path:"vendas/edit/:id", component:EditVendaComponent},

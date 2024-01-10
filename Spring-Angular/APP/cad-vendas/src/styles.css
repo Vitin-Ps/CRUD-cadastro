@@ -82,6 +82,18 @@ input[type="submit"]:hover {
   transition: 0.2s;
 }
 
+.btn-invertido {
+  background-color: #FFF;
+  color: #6700ac;
+  border: 1px solid #6700ac;
+}
+
+.btn-acao {
+  background-image: linear-gradient(to bottom right, #d953f7, #c353f7 30%, #6904ce 100%);
+  width: 120px;
+  border-radius: 20px;
+}
+
 .btn-padrao:hover {
   background-color: #fff;
   color: #6700ac;
@@ -90,17 +102,17 @@ input[type="submit"]:hover {
   padding: .7em 1.2em;
 }
 
-.btn-invertido {
-  background-color: #FFF;
-  color: #6700ac;
-  border: 1px solid #6700ac;
-}
-
 .btn-invertido:hover {
   background-color: #6700ac;
   color: #FFF;
   border-color: transparent;
 }
+
+.btn-acao:hover {
+  background-image: none;
+  margin: .8em 1em;
+}
+
 
 /* barra de rolagem */
 .scroll-bar {

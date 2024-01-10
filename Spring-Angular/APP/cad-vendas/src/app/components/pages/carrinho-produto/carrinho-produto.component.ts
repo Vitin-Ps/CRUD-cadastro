@@ -6,6 +6,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { MensagensService } from '../../../services/mensagens.service';
 import { CarrinhoEnvio } from '../../../interfaces/Carrinho';
 import { CarrinhoService } from '../../../services/carrinho.service';
+import { FuncionalidadesExtrasService } from '../../../services/funcionalidades-extras.service';
 
 @Component({
   selector: 'app-carrinho-produto',
@@ -40,10 +41,11 @@ export class CarrinhoProdutoComponent implements OnInit {
 
   procurar(e: Event): void {
     const target = e.target as HTMLInputElement;
-    const value = target.value;
+    const value = FuncionalidadesExtrasService.removerAcentuacoes(target.value);
 
     this.produtos = this.allProdutos.filter((produto) => {
-      return produto.nome.toLowerCase().includes(value);
+      const nome = FuncionalidadesExtrasService.removerAcentuacoes(produto.nome);
+      return nome.includes(value);
     });
   }
 

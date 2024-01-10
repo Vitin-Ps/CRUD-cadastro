@@ -34,4 +34,20 @@ export class ProdutoService {
   listarProdutosAll(): Observable<Response<Produto[]>> {
     return this.http.get<Response<Produto[]>>(this.apiUrl);
   }
+
+  excluirProdutoLogico(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
+
+  excluirProdutoDefinitivo(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}/apagar`);
+  }
+
+  detalharProduto(id: number): Observable<Produto> {
+    return this.http.get<Produto>(`${this.apiUrl}/${id}`);
+  }
+
+  alteraProduto(produto: Produto): Observable<Produto> {
+    return this.http.put<Produto>(this.apiUrl, produto);
+  }
 }
