@@ -27,7 +27,7 @@ export class ManipularDivsDinamicasComponent implements AfterViewInit, OnInit {
     },
   ];
 
-  @ViewChildren('cardsContainer') cardsContainers!: QueryList<ElementRef>;
+  @ViewChildren('cardsProdutos') cardsProdutos!: QueryList<ElementRef>;
 
   ngOnInit(): void {
     console.log('oi');
@@ -36,32 +36,24 @@ export class ManipularDivsDinamicasComponent implements AfterViewInit, OnInit {
   //ciclo de vida angular, depois de carrgear os elementos html
   ngAfterViewInit(): void {
     // Certifique-se de que a QueryList está populada
-    if (this.cardsContainers && this.cardsContainers.length > 0) {
-      // Itera sobre todas as instâncias
-      this.cardsContainers.forEach((container, index) => {
-        const alturaDaDiv = container.nativeElement.offsetHeight;
-        console.log(`Altura da div ${index + 1}: ${alturaDaDiv}px`);
-      });
-    }
+    // if (this.cardsProdutos && this.cardsProdutos.length > 0) {
+    //   // Itera sobre todas as instâncias
+    //   this.cardsProdutos.forEach((container, index) => {
+    //     // const alturaDaDiv = container.nativeElement.offsetHeight;
+    //     // console.log(`Altura da div ${index + 1}: ${alturaDaDiv}px`);
+    //     console.log(index);
+    //   });
+    // }
   }
 
-  selecionarCard(id:number, estadoProduto: boolean) {
-
-    console.log(`Produto: ${id}, Estado: ${estadoProduto}`);
-
-    if (this.cardsContainers && this.cardsContainers.length > 0) {
-      // Itera sobre todas as instâncias
-      this.cardsContainers.forEach((container, index) => {
-        if (this.produtos && index < this.produtos.length) {
-          const produtoId = this.produtos[index].id;
-          if (produtoId === id) {
-            container.nativeElement.que
-          } else {
-            container.nativeElement.classList.remove('selecionado');
-          }
-        }
-      });
-      
-    }
+  selecionarCard(id: number): void {
+    this.produtos.forEach((produto) => {
+      if (produto.id === id) {
+        produto.selecionado = !produto.selecionado;
+      } else {
+        produto.selecionado = false;
+      }
+    });
   }
+  
 }

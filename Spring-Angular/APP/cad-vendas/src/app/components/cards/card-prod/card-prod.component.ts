@@ -3,6 +3,7 @@ import {
   ElementRef,
   EventEmitter,
   Input,
+  OnInit,
   Output,
 } from '@angular/core';
 import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
@@ -12,38 +13,25 @@ import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './card-prod.component.html',
   styleUrl: './card-prod.component.css',
 })
-export class CardProdComponent {
+export class CardProdComponent implements OnInit{
   @Input() nome!: string;
   @Input() valor!: number;
-  @Output() valorSelecionado = new EventEmitter<boolean>();
-  selecionado: boolean = false;
+  @Input() selecionado: boolean = false;
 
   faMoneyBill = faMoneyBill;
 
   constructor(private elementRef: ElementRef) {}
-
-  selecionarProduto(classe: string) {
-    this.selecionado = !this.selecionado;
-    if (this.selecionado)
-      this.elementRef.nativeElement
-        .querySelector('.card-produto')
-        .classList.add(classe);
-    else
-      this.elementRef.nativeElement
-        .querySelector('.card-produto')
-        .classList.remove(classe);
-    this.valorSelecionado.emit(this.selecionado);
+  
+  ngOnInit(): void {
+  //   if (this.selecionado)
+  //   this.elementRef.nativeElement
+  //     .querySelector('.card-produto')
+  //     .classList.add('selecionado');
+  // else
+  //   this.elementRef.nativeElement
+  //     .querySelector('.card-produto')
+  //     .classList.remove('selecionado');
+  // this.valorSelecionado.emit(this.selecionado);
   }
   
-  adicionarClasseNaDivInterna(classe: string) {
-    this.elementRef.nativeElement
-      .querySelector('.card-produto')
-      .classList.add(classe);
-  }
-
-  removerClasseNaDivInterna(classe: string) {
-    this.elementRef.nativeElement
-      .querySelector('.card-produto')
-      .classList.remove(classe);
-  }
 }
