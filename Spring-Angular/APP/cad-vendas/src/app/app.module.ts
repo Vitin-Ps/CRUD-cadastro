@@ -32,6 +32,7 @@ import { CardProdComponent } from './components/cards/card-prod/card-prod.compon
 import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/manipulacao-div.component';
 import { TesteComponent } from './testes/teste/teste.component';
 import { ManipularDivsDinamicasComponent } from './testes/components/manipular-divs-dinamicas/manipular-divs-dinamicas.component';
+import { RadioComponent } from './testes/components/radio/radio.component';
 
 @NgModule({
   declarations: [
@@ -62,6 +63,7 @@ import { ManipularDivsDinamicasComponent } from './testes/components/manipular-d
     ManipulacaoDivComponent,
     TesteComponent,
     ManipularDivsDinamicasComponent,
+    RadioComponent,
   ],
   imports: [
     BrowserModule,
