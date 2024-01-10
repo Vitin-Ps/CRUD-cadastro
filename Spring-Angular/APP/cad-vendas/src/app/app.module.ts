@@ -30,6 +30,8 @@ import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.com
 import { EditProdComponent } from './components/pages/edit-prod/edit-prod.component';
 import { CardProdComponent } from './components/cards/card-prod/card-prod.component';
 import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/manipulacao-div.component';
+import { TesteComponent } from './testes/teste/teste.component';
+import { ManipularDivsDinamicasComponent } from './testes/components/manipular-divs-dinamicas/manipular-divs-dinamicas.component';
 
 @NgModule({
   declarations: [
@@ -58,6 +60,8 @@ import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/man
     EditProdComponent,
     CardProdComponent,
     ManipulacaoDivComponent,
+    TesteComponent,
+    ManipularDivsDinamicasComponent,
   ],
   imports: [
     BrowserModule,

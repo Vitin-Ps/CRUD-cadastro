@@ -12,6 +12,8 @@ import { ProdDadosComponent } from './components/pages/prod-dados/prod-dados.com
 import { VendasDadosComponent } from './components/pages/vendas-dados/vendas-dados.component';
 import { EditVendaComponent } from './components/pages/edit-venda/edit-venda.component';
 import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/manipulacao-div.component';
+import test from 'node:test';
+import { TesteComponent } from './testes/teste/teste.component';
 
 
 const routes: Routes = [
@@ -28,6 +30,7 @@ const routes: Routes = [
   {path:"home/funcionarios", component: FuncDadosComponent},
   {path:"home/produtos", component:ProdDadosComponent},
   {path:"home/vendas", component:VendasDadosComponent},
+  {path:"testes", component:TesteComponent},
 ];
 
 @NgModule({
