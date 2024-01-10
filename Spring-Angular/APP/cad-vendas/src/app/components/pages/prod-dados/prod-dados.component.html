@@ -8,7 +8,7 @@
         <button>Excluir</button>
     </div> -->
     <div class="cards-container scroll-bar" #cardsContainer>
-        <app-card-prod *ngFor="let produto of produtos" [nome]="produto.nome" [valor]="produto.valor"></app-card-prod>
+        <app-card-prod *ngFor="let produto of produtos" [nome]="produto.nome" [valor]="produto.valor" (valorSelecionado)="selecionarCard(produto.id!, $event)"></app-card-prod>
     </div>
     <!-- <div class="paginacao-container">
         <button class="btn-padrao btn-invertido">Anterior</button>

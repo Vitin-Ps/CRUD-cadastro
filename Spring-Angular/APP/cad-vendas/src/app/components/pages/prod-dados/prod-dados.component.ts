@@ -3,8 +3,10 @@ import {
   ElementRef,
   HostListener,
   OnInit,
+  QueryList,
   Renderer2,
   ViewChild,
+  ViewChildren,
 } from '@angular/core';
 import { Produto } from '../../../interfaces/Produto';
 import { ProdutoService } from '../../../services/produto.service';
@@ -18,6 +20,7 @@ export class ProdDadosComponent implements OnInit {
   produtosTotal: Produto[] = [];
   produtos: Produto[] = [];
   @ViewChild('cardsContainer') cardsContainer!: ElementRef;
+  @ViewChildren('cardsContainer') cardsDiv!: QueryList<ElementRef>;
 
   constructor(
     private produtoService: ProdutoService,
@@ -46,5 +49,25 @@ export class ProdDadosComponent implements OnInit {
       this.renderer.addClass(cardsContainer, 'shaded');
     else
     this.renderer.removeClass(cardsContainer, 'shaded');
+  }
+
+  selecionarCard(id:number, estadoProduto: boolean) {
+
+    console.log(`Produto: ${id}, Estado: ${estadoProduto}`);
+
+    if (this.cardsDiv && this.cardsDiv.length > 0) {
+      // Itera sobre todas as instâncias
+      this.cardsDiv.forEach((container, index) => {
+        if (this.produtos && index < this.produtos.length) {
+          const produtoId = this.produtos[index].id;
+          if (produtoId === id) {
+            container.nativeElement.que
+          } else {
+            container.nativeElement.classList.remove('selecionado');
+          }
+        }
+      });
+      
+    }
   }
 }
