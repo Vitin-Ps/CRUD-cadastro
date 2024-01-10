@@ -1,5 +1,5 @@
 <div class="fundo-branco-container">
-    <!-- <div class="filtro-container">
+  <!-- <div class="filtro-container">
         <h2><span>Busque</span> pelo Produto: </h2>
         <input type="text" />
     </div>
@@ -7,10 +7,16 @@
         <a routerLink=""><button>Editar</button></a>
         <button>Excluir</button>
     </div> -->
-    <!-- <div class="cards-container scroll-bar" #cardsContainer>
-        <app-card-prod *ngFor="let produto of produtos" [nome]="produto.nome" [valor]="produto.valor" (valorSelecionado)="selecionarCard(produto.id!, $event)"></app-card-prod>
-    </div> -->
-    <!-- <div class="paginacao-container">
+  <div class="cards-container scroll-bar" #cardsContainer>
+    <app-card-prod
+      *ngFor="let produto of produtos"
+      [nome]="produto.nome"
+      [valor]="produto.valor"
+      (click)="selecionarCard(produto.id!)"
+      [selecionado]="produto.selecionado!"
+    ></app-card-prod>
+  </div>
+  <!-- <div class="paginacao-container">
         <button class="btn-padrao btn-invertido">Anterior</button>
         <h3>Página 1</h3>
         <button class="btn-padrao btn-invertido">Próxima</button>

@@ -1,5 +1,5 @@
 .card-produto {
-  background-image: linear-gradient(to bottom, #b553f7 10%, #6904ce);
+  background-image: linear-gradient(to bottom, #d953f7, #b553f7 30%, #6904ce 80%);
   margin: 1em;
   padding: 0 1em;
   border-radius: 5px;

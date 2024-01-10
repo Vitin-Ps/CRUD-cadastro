@@ -1,11 +1,4 @@
-import {
-  Component,
-  ElementRef,
-  EventEmitter,
-  Input,
-  OnInit,
-  Output,
-} from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
@@ -13,25 +6,10 @@ import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
   templateUrl: './card-prod.component.html',
   styleUrl: './card-prod.component.css',
 })
-export class CardProdComponent implements OnInit{
+export class CardProdComponent {
   @Input() nome!: string;
   @Input() valor!: number;
   @Input() selecionado: boolean = false;
 
   faMoneyBill = faMoneyBill;
-
-  constructor(private elementRef: ElementRef) {}
-  
-  ngOnInit(): void {
-  //   if (this.selecionado)
-  //   this.elementRef.nativeElement
-  //     .querySelector('.card-produto')
-  //     .classList.add('selecionado');
-  // else
-  //   this.elementRef.nativeElement
-  //     .querySelector('.card-produto')
-  //     .classList.remove('selecionado');
-  // this.valorSelecionado.emit(this.selecionado);
-  }
-  
 }
