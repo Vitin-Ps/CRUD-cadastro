@@ -48,4 +48,8 @@ export class FuncionarioService {
   alteraFuncionario(funcionario: Funcionario): Observable<Funcionario> {
     return this.http.put<Funcionario>(this.apiUrl, funcionario);
   }
+
+  detalharFuncionario(id: number): Observable<Funcionario> {
+    return this.http.get<Funcionario>(`${this.apiUrl}/${id}`);
+  }
 }

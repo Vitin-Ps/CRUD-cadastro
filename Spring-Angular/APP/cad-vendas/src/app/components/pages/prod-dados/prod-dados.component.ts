@@ -1,4 +1,6 @@
 import {
+  AfterContentChecked,
+  AfterViewInit,
   Component,
   ElementRef,
   HostListener,
@@ -35,14 +37,16 @@ export class ProdDadosComponent implements OnInit {
     private mensagemService: MensagensService,
     private comunicacaoService: ComunicacaoService
   ) {}
-
-  ngOnInit(): void {
-    this.listarProdutos(0, 9);
+  
+  async ngOnInit(): Promise<void> {
+    await this.listarProdutos(0, 9);
+    console.log(`on init:`);
+    console.log(this.produtos);
     setTimeout(() => {
       this.verificarAltura();
-    }, 10);
-
-    this.comunicacaoService.emitFunction.subscribe(() => {
+    }, 100);
+    
+    await this.comunicacaoService.emitFunction.subscribe(() => {
       console.log('chegou no emit2');
       if (this.produto != null) this.removerProduto();
     });
@@ -95,13 +99,15 @@ export class ProdDadosComponent implements OnInit {
   }
 
   removerProduto() {
-    this.produtoService.excluirProdutoLogico(this.produto!.id!).subscribe(() => {
-      window.location.reload();
-    });
+    this.produtoService
+      .excluirProdutoLogico(this.produto!.id!)
+      .subscribe(() => {
+        window.location.reload();
+      });
   }
 
-  listarProdutos(page: number, numDados: number) {
-    this.produtoService
+  async listarProdutos(page: number, numDados: number) {
+    await this.produtoService
       .listarProdutosPage(page, numDados, 'nome')
       .subscribe((item) => {
         this.allProdutos = item.content;
@@ -109,12 +115,13 @@ export class ProdDadosComponent implements OnInit {
         this.pageNumber = item.pageable?.pageNumber! + 1;
         this.totalPages = item.totalPages!;
       });
-      this.produto = null;
+    this.produto = null;
   }
 
   mudarPagina(pageAcao: boolean) {
     if (pageAcao && this.totalPages > this.pageNumber)
       this.listarProdutos(this.pageNumber, 9);
-    else if (!pageAcao && this.pageNumber != 1) this.listarProdutos(this.pageNumber - 2, 9);
+    else if (!pageAcao && this.pageNumber != 1)
+      this.listarProdutos(this.pageNumber - 2, 9);
   }
 }

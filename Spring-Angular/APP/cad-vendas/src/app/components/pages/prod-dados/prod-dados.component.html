@@ -17,9 +17,10 @@
     class="cards-container scroll-bar"
     [ngClass]="{ shaded: shaded }"
     #cardsContainer
+    *ngIf="produtos"
   >
     <app-card-prod
-      *ngFor="let produto of produtos"
+    *ngFor="let produto of produtos"
       [nome]="produto.nome"
       [valor]="produto.valor"
       (click)="selecionarCard(produto)"

@@ -15,12 +15,14 @@ import { ManipulacaoDivComponent } from './testes/components/manipulacao-div/man
 import test from 'node:test';
 import { TesteComponent } from './testes/teste/teste.component';
 import { EditProdComponent } from './components/pages/edit-prod/edit-prod.component';
+import { EditFuncComponent } from './components/pages/edit-func/edit-func.component';
 
 
 const routes: Routes = [
   // {path:"", component:HomeComponent},
   {path:"", component:HomeComponent},
   {path:"funcionarios", component:CadFuncionarioComponent},
+  {path:"funcionarios/:id", component:EditFuncComponent},
   {path:"produtos", component:CadProdutoComponent},
   {path:"produtos/:id", component:EditProdComponent},
   {path:"vendas", component:CadVendaComponent},

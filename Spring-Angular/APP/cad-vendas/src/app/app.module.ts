@@ -34,6 +34,7 @@ import { TesteComponent } from './testes/teste/teste.component';
 import { ManipularDivsDinamicasComponent } from './testes/components/manipular-divs-dinamicas/manipular-divs-dinamicas.component';
 import { RadioComponent } from './testes/components/radio/radio.component';
 import { EditFuncComponent } from './components/pages/edit-func/edit-func.component';
+import { CicloVidaComponent } from './testes/components/ciclo-vida/ciclo-vida.component';
 
 @NgModule({
   declarations: [
@@ -66,6 +67,7 @@ import { EditFuncComponent } from './components/pages/edit-func/edit-func.compon
     ManipularDivsDinamicasComponent,
     RadioComponent,
     EditFuncComponent,
+    CicloVidaComponent,
   ],
   imports: [
     BrowserModule,

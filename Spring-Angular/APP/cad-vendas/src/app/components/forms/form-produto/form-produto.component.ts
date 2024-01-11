@@ -21,7 +21,9 @@ export class FormProdutoComponent implements OnInit, AfterContentInit {
   @Input() prodData: Produto | null = null;
 
   prodForm!: FormGroup;
+
   constructor(private mensagensService: MensagensService) {}
+  
   ngOnInit(): void {
     this.validaForm();
   }
