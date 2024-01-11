@@ -37,9 +37,15 @@ export class FuncionarioService {
     return this.http.get<Response<Funcionario[]>>(this.apiUrl);
   }
 
-  listarFuncionarioPorId(id: number): Observable<Funcionario> {
-    const url = `${this.apiUrl}/${id}`
-    return this.http.get<Funcionario>(url);
+  excluirFuncionarioLogico(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}`);
+  }
 
+  excluirFuncionarioDefinitivo(id: number) {
+    return this.http.delete(`${this.apiUrl}/${id}/apagar`);
+  }
+
+  alteraFuncionario(funcionario: Funcionario): Observable<Funcionario> {
+    return this.http.put<Funcionario>(this.apiUrl, funcionario);
   }
 }

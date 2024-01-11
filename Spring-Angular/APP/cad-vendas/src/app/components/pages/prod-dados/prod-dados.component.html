@@ -26,10 +26,13 @@
       [selecionado]="produto.selecionado!"
     ></app-card-prod>
   </div>
-  <!-- <div class="paginacao-container">
-        <button class="btn-padrao btn-invertido">Anterior</button>
-        <h3>Página 1</h3>
-        <button class="btn-padrao btn-invertido">Próxima</button>
-
-    </div> -->
+  <div class="paginacao-container">
+    <button class="btn-padrao btn-invertido" (click)="mudarPagina(false)">
+      Anterior
+    </button>
+    <h3>Página {{ pageNumber }}</h3>
+    <button class="btn-padrao btn-invertido" (click)="mudarPagina(true)">
+      Próxima
+    </button>
+  </div>
 </div>
